@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#gradient-canvas {
+  --gradient-color-1: #a7b8ad;
+  --gradient-color-2: #124429;
+  --gradient-color-3: #dee4e0;
+  --gradient-color-4: #8ca294;
+}
+
+#predefinedQuestionsElement::-webkit-scrollbar,
+#MenuPagesContainer::-webkit-scrollbar,
+#conversationBox::-webkit-scrollbar, 
+#movesBox::-webkit-scrollbar,
+#sidebarConversationsContainer::-webkit-scrollbar {
+  width: 9px;
+}
+
+#conversationBox, #sidebarConversationsContainer {
+  scrollbar-gutter: stable both-edges;
+}
+
+#movesBox, #predefinedQuestionsElement {
+  scrollbar-gutter: stable;
+}
+
+#conversationBox::-webkit-scrollbar-track:hover,
+#movesBox::-webkit-scrollbar-track:hover {
+  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.3); 
+  
+}
+
+
+#movesBox::-webkit-scrollbar-thumb {
+
+  background-color: rgb(74, 73, 73);
+}
+
+#conversationBox::-webkit-scrollbar-thumb {
+
+  background-color: rgba(166, 166, 166, 0.735);
+  border-radius: 100px;
+}
+
+
+#sidebarConversationsContainer::-webkit-scrollbar-thumb {
+
+  background-color: rgb(164, 183, 206, 0.33);
+  border-radius: 100px;
+}
+#predefinedQuestionsElement::-webkit-scrollbar-thumb {
+
+  background-color: rgba(3, 67, 4, 0.669);
+  border-radius: 100px;
+}
+
+#MenuPagesContainer::-webkit-scrollbar-thumb{
+  background-color: rgb(164, 183, 206, 0.33);
+  border-radius: 100px;
+}
+#sidebarConversationsContainer::-webkit-scrollbar-thumb:hover {
+
+  background-color: rgba(241, 237, 237, 0.735);
+}
+
+.react-scroll-to-bottom--css-uzqrz-79elbk {
+  position: relative;
+}
+
+.react-scroll-to-bottom--css-ikyem-1n7m0yu {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.HomePageButtonsCover-1,
+.HomePageButtonsCover-2,
+.HomePageButtonsCover-3,
+.HomePageButtonsCover-4{
+  width:0%;
+  height: 100%;
+  background-color: #181818;
+  position:absolute;
+  left:0;
+  top:0;
+  transition:0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+#sidebarMenuMain{
+  transition-property: all;
+  transition:0.2s ease-in-out;
+}
+
+#HP-NewGameButton:hover .HomePageButtonsCover-1,
+#HP-Quickplay:hover .HomePageButtonsCover-2,
+#HP-Settings:hover .HomePageButtonsCover-3,
+#HP-Chat:hover .HomePageButtonsCover-4{
+  width:100%;
+  height:100%;
+}
+
+#learnmoreNavbar.scrolled{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color:black;
+  transition: all;
+  transition-duration: 300ms;
+  
+}
+
+.wave-container {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  height: 16px; 
+  gap: 5px;
+}
+
+.wave-bar {
+  width: 5px;
+  height: 100%;
+  background-color: #124429; /* Tailwind blue-600 */
+  animation: wave 1s infinite ease-in-out;
+  border-radius: 5px;
+}
+
+/* Define the animation */
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+/* Make the bars animate at different times */
+.wave-bar:nth-child(1) {
+  animation-delay: 0s;
+}
+.wave-bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave-bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave-bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave-bar:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.wave-bar:nth-child(6) {
+  animation-delay: 0.1s;
+}
+.wave-bar:nth-child(7) {
+  animation-delay: 0s;
+}

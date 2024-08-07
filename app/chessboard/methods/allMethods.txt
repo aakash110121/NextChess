@@ -1,0 +1,479 @@
+import * as chess from 'chess.js';
+import * as io from 'io-ts';
+import * as requests from 'request-promise-native';
+
+function isFen(inputData: string): boolean {
+    /** Check if the input string is a FEN string. */
+    return inputData.includes(" ") && inputData.includes("/");
+}
+
+function pgnToFen(pgnData: string): string {
+    /** Convert PGN string to FEN string. */
+    const pgn = io.stringIO.parse(pgnData);
+    const game = chess.pgn.read_game(pgn);
+    const board = game.end().board();
+    return board.fen();
+}
+
+interface StockfishAPIParams {
+    fen: string;
+    depth: number;
+    mode: string;
+}
+
+interface StockfishAPIResponse {
+    success: boolean;
+    error?: string;
+    [key: string]: any;
+}
+
+async function callStockfishAPI(fen: string, depth: number, mode: string): Promise<StockfishAPIResponse> {
+    /** Call the Stockfish API and return the response. */
+    // console.log("Calling Stockfish API.");
+    const apiEndpoint = "https://stockfish.online/api/s/v2.php";
+    // console.log(`API endpoint: ${apiEndpoint}`);
+    const params: StockfishAPIParams = {
+        fen: fen,
+        depth: depth,
+        mode: mode
+    };
+    // console.log(`Parameters for API call: ${JSON.stringify(params)}`);
+
+    // Making the API call
+    const response = await requests.get(apiEndpoint, { params: params });
+    // console.log(`API response received with status code ${response.statusCode}`);
+
+    // Checking for a successful API response
+    if (response.statusCode !== 200) {
+        // console.log(`Error: Received status code ${response.statusCode}`);
+        return { success: false, error: `Received status code ${response.statusCode}` };
+    }
+
+    // Printing raw response text for debugging
+    // console.log("Raw response text:");
+    // console.log(response.body.slice(0, 500)); // Print first 500 characters of the response for brevity
+
+    // Attempting to decode JSON
+    try {
+        const responseJson = JSON.parse(response.body); // Assuming the API returns JSON
+        // console.log("JSON response decoded successfully.");
+        // console.log("Decoded JSON response:");
+        // console.log(responseJson); // Printing the entire JSON response
+        return responseJson;
+    } catch (e) {
+        // console.log(`Failed to decode JSON response: ${e}`);
+        // console.log("Raw response that caused JSON decoding failure:");
+        // console.log(response.body); // Print the complete raw response
+        return { success: false, error: "Failed to decode JSON response" };
+    }
+}
+
+function semanticizeStockfishEval(evaluation: number): string {
+    // console.log("Starting semanticization of Stockfish evaluation.");
+    try {
+        const score = evaluation;
+        // console.log(`Score extracted: ${score}`);
+
+        // console.log(`Converted score: ${score}`);
+        let description = "balanced position";
+        if (Math.abs(score) > 0) {
+            description = Math.abs(score) < 1 ? "slight advantage" : "clear advantage";
+        }
+        const advantage = score > 0 ? 'White' : 'Black';
+        score = Math.abs(score);
+        const result = `## Evaluation: ${advantage} has a ${description} (${score})`;
+        // console.log(`Final evaluation description: ${result}`);
+        return result;
+    } catch (e) {
+        // console.log(`ValueError encountered: ${e}`);
+        return "## Evaluation: Unable to parse score";
+    }
+}
+
+function describeMove(board: chess.Board, move: string): string {
+    // Parse the move using the current board state
+    const moveObj = board.parseSan(move);
+    const fromSquare = chess.squareToString(moveObj.from);
+    const toSquare = chess.squareToString(moveObj.to);
+
+    // Get the piece making the move
+    const piece = board.pieceAt(moveObj.from);
+    const pieceNames: { [key: string]: string } = {
+        'R': 'Rook', 'N': 'Knight', 'B': 'Bishop',
+        'Q': 'Queen', 'K': 'King', 'P': 'Pawn'
+    };
+    const pieceName = piece ? pieceNames[piece.type.toUpperCase()] : 'Pawn';
+
+    // Determine if it's a capture move
+    const capture = board.isCapture(moveObj);
+    const captureIndicator = capture ? 'captures on' : 'to';
+
+    return `${pieceName} on ${fromSquare} ${captureIndicator} ${toSquare}`;
+}
+
+function describeMoveShort(board: chess.Board, move: string): string {
+    // Parse the move using the current board state
+    const moveObj = board.parseSan(move);
+    const fromSquare = chess.squareToString(moveObj.from);
+    const toSquare = chess.squareToString(moveObj.to);
+
+    // Get the piece making the move
+    const piece = board.pieceAt(moveObj.from);
+    const pieceNames: { [key: string]: string } = {
+        'R': 'R', 'N': 'N', 'B': 'B', 'Q': 'Q', 'K': 'K', 'P': ''
+    };
+    const pieceName = piece ? pieceNames[piece.type.toUpperCase()] : '';
+
+    // Determine if it's a capture move and adjust the description accordingly
+    const capture = board.isCapture(moveObj);
+    const moveNotation = `${pieceName}${fromSquare}${capture ? 'x' : ''}${toSquare}`;
+
+    return moveNotation;
+}
+
+function semanticizeStockfishBestmove(board: chess.Board, data: string): string {
+    // console.log("Starting semanticization of Stockfish best move.");
+    const parts = data.split(' ');
+    // console.log(`Data parts: ${parts}`);
+
+    const bestmove = parts[1];
+    // console.log(`Best move extracted: ${bestmove}`);
+    const moveDescription = describeMove(board, bestmove);
+    // console.log(`Move description: ${moveDescription}`);
+
+    const ponder = parts.length > 3 ? parts[3] : 'none';
+    // console.log(`Ponder move extracted: ${ponder}`);
+    const ponderDescription = ponder !== 'none' ? describeMove(board, ponder) : "No ponder move";
+    // console.log(`Ponder description: ${ponderDescription}`);
+
+    const result = `## Best move: ${moveDescription} (expected reply: ${ponderDescription})`;
+    // console.log(`Result: ${result}`);
+    return result;
+}
+
+function semanticizeStockfishLines(board: chess.Board, data: string): string {
+    // console.log("Starting semanticization of Stockfish lines.");
+    const moves = data.split(' ');
+    // console.log(`Moves extracted: ${moves}`);
+
+    const lineDescriptions: string[] = [];
+    const conciseMoves: string[] = [];
+    for (const move of moves) {
+        const describedMove = describeMove(board, move);
+        const conciseMove = describeMoveShort(board, move);
+        lineDescriptions.push(describedMove);
+        conciseMoves.push(conciseMove);
+        // Update the board state with this move
+        board.pushSan(move);
+    }
+
+    const semanticLine = lineDescriptions.join(" -> ");
+    const pgnLine = conciseMoves.join(" ");
+    const result = `## Suggested line (semantic): ${semanticLine}\n## Suggested line (PGN): ${pgnLine}`;
+    // console.log(`Result: ${result}`);
+    return result;
+}
+
+function semanticizeStockfishLinesBoth(board: chess.Board, data: string): string {
+    // console.log("Starting semanticization of Stockfish lines.");
+    const moves = data.split(' ');
+    // console.log(`Moves extracted: ${moves}`);
+
+    const lineDescriptions: string[] = [];
+    for (const move of moves) {
+        const describedMove = describeMove(board, move);
+        lineDescriptions.push(describedMove);
+        // Update the board state with this move
+        board.pushSan(move);
+    }
+
+    // console.log(`Line descriptions: ${lineDescriptions}`);
+    const result = "## Suggested line: " + lineDescriptions.join(" -> ");
+    // console.log(`Result: ${result}`);
+    return result;
+}
+
+function semanticizeStockfishLinesShort(board: chess.Board, data: string): string {
+    // console.log("Starting semanticization of Stockfish lines.");
+    const moves = data.split(' ');
+    // console.log(`Moves extracted: ${moves}`);
+
+    const lineDescriptions: string[] = [];
+    let moveNumber = 1;
+    for (let i = 0; i < moves.length; i++) {
+        const move = moves[i];
+        if (i % 2 === 0) { // White's move, include move number
+            const describedMove = `${moveNumber}. ${describeMove(board, move)}`;
+            moveNumber++;
+            lineDescriptions.push(describedMove);
+        } else { // Black's move
+            const describedMove = describeMove(board, move);
+            lineDescriptions.push(describedMove);
+        }
+        // Update the board state with this move
+        board.pushSan(move);
+    }
+
+    const result = "## Suggested line: " + lineDescriptions.join(" ");
+    // console.log(`Result: ${result}`);
+    return result;
+}
+
+function semanticizeStockfishOutput(stockfishOutput: any): void {
+    // console.log("Starting semanticization of Stockfish output.");
+
+    if ('evaluation' in stockfishOutput) {
+        const score = parseFloat(stockfishOutput.evaluation.data.split(' ')[2]);
+        // console.log(`Score extracted: ${score}`);
+        const advantage = score > 0 ? 'White' : 'Black';
+        const evalDescription = `Stockfish evaluation: ${Math.abs(score)} in favor of ${advantage}.`;
+        // console.log(evalDescription);
+    }
+
+    if ('bestmove' in stockfishOutput) {
+        const bestmoveData = stockfishOutput.bestmove.data.split(' ');
+        // console.log(`Bestmove data extracted: ${bestmoveData}`);
+        const bestmove = bestmoveData[1];
+        const color = bestmoveData[0].includes('w') ? 'White' : 'Black';
+        const action = bestmove.includes('x') ? 'captures' : 'moves to';
+        const [fromSquare, toSquare] = [bestmove.slice(0, 2), bestmove.slice(2, 4)];
+        let bestmoveDescription = `${color} ${action} from ${fromSquare} to ${toSquare}.`;
+        if (bestmoveData.includes('ponder')) {
+            const ponderMove = bestmoveData[3];
+            bestmoveDescription += ` Anticipating the opponent's best response: ${ponderMove}.`;
+        }
+        // console.log(bestmoveDescription);
+    }
+
+    if ('lines' in stockfishOutput) {
+        const lineMoves = stockfishOutput.lines.data.split(' ');
+        // console.log(`Line moves extracted: ${lineMoves}`);
+        const lineDescriptions: string[] = [];
+        for (let i = 0; i < lineMoves.length; i++) {
+            const move = lineMoves[i];
+            const color = i % 2 === 0 ? 'White' : 'Black';
+            const action = move.includes('x') ? 'captures' : 'moves';
+            const [fromSquare, toSquare] = [move.slice(0, 2), move.slice(2, 4)];
+            lineDescriptions.push(`${color} ${action} from ${fromSquare} to ${toSquare}`);
+        }
+        const lineDescription = lineDescriptions.join(" -> ");
+        // console.log(`Stockfish suggests the following line of play: ${lineDescription}`);
+    }
+}
+
+function analyzePawnStructure(fen: string): string {
+    const board = new chess.Board(fen);
+
+    interface PawnFeatures {
+        positions: string[];
+        doubled: string[];
+        isolated: string[];
+        passed: string[];
+    }
+
+    function pawnStructure(pawns: number[], color: string, opponentColor: string): PawnFeatures {
+        const doubled: string[] = [];
+        const isolated: string[] = [];
+        const passed: string[] = [];
+        const fileOccurrences = new Array(8).fill(0);
+        const pawnPositions = pawns.map(pawn => chess.squareToString(pawn));
+
+        // Count pawns on each file to identify doubled pawns
+        for (const pawn of pawns) {
+            const file = chess.getFile(pawn);
+            fileOccurrences[file]++;
+        }
+
+        for (const pawn of pawns) {
+            const file = chess.getFile(pawn);
+
+            // Doubled Pawns
+            if (fileOccurrences[file] > 1) {
+                doubled.push(chess.squareToString(pawn));
+            }
+
+            // Isolated Pawns
+            let isolatedFlag = true;
+            for (let adjFile = Math.max(0, file - 1); adjFile <= Math.min(7, file + 1); adjFile++) {
+                if (fileOccurrences[adjFile] > 0 && adjFile !== file) {
+                    isolatedFlag = false;
+                    break;
+                }
+            }
+            if (isolatedFlag) {
+                isolated.push(chess.squareToString(pawn));
+            }
+
+            // Passed Pawns
+            let passedFlag = true;
+            for (let r = 1; r <= 7; r++) {
+                const targetSquare = chess.getSquare(file, r);
+                if (board.getPiece(targetSquare) && board.getPiece(targetSquare)!.color === opponentColor) {
+                    passedFlag = false;
+                    break;
+                }
+            }
+            if (passedFlag) {
+                passed.push(chess.squareToString(pawn));
+            }
+        }
+
+        return { positions: pawnPositions, doubled, isolated, passed };
+    }
+
+    const whitePawns = board.getPieces(chess.PieceType.PAWN, chess.Color.WHITE);
+    const blackPawns = board.getPieces(chess.PieceType.PAWN, chess.Color.BLACK);
+
+    const whiteFeatures = pawnStructure(whitePawns, 'white', 'black');
+    const blackFeatures = pawnStructure(blackPawns, 'black', 'white');
+
+    function formatOutput(color: string, features: PawnFeatures): string {
+        const labels = ["Positions", "Doubled", "Isolated", "Passed"];
+        return labels.map((label, i) => `### ${label}: ${features[label as keyof PawnFeatures].join(', ') || 'None'}`).join("\n");
+    }
+
+    let result = `# Pawn Structure Analysis for ${fen}\n`;
+    result += "## White Pawns\n" + formatOutput("White", whiteFeatures);
+    result += "\n## Black Pawns\n" + formatOutput("Black", blackFeatures);
+
+    return result;
+}
+
+function getAttackers(fen: string, square: string): string {
+    // Initialize the board with the given FEN string
+    const board = new chess.Board(fen);
+
+    // Convert the square notation to a square index
+    const targetSquare = chess.parseSquare(square);
+
+    // Define a mapping from piece symbols to full names and their values
+    const pieceNames: { [key: string]: string } = {
+        'R': 'Rook', 'N': 'Knight', 'B': 'Bishop', 'Q': 'Queen', 'K': 'King', 'P': 'Pawn',
+        'r': 'rook', 'n': 'knight', 'b': 'bishop', 'q': 'queen', 'k': 'king', 'p': 'pawn'
+        };
+        const pieceValues: { [key: string]: number } = { 'R': 5, 'N': 3, 'B': 3, 'Q': 9, 'K': 0, 'P': 1 };
+
+        // Check the piece on the target square
+    const targetPiece = board.getPiece(targetSquare);
+    let targetPieceInfo: string;
+    let targetPieceColor: string | undefined;
+    if (targetPiece === null) {
+        targetPieceInfo = 'empty';
+        targetPieceColor = undefined;
+    } else {
+        targetPieceColor = targetPiece.color === chess.Color.WHITE ? 'white' : 'black';
+        targetPieceInfo = `${targetPieceColor} ${pieceNames[targetPiece.type]}`;
+    }
+
+    // Get attackers of the square for both colors
+    const attackers: { [key: string]: number[] } = {
+        [chess.Color.WHITE]: board.getAttackingSquares(targetSquare, chess.Color.WHITE),
+        [chess.Color.BLACK]: board.getAttackingSquares(targetSquare, chess.Color.BLACK)
+    };
+
+    // Determine control of the square
+    const whiteControl = attackers[chess.Color.WHITE].reduce((sum, sq) => {
+        const piece = board.getPiece(sq);
+        return sum + (piece ? pieceValues[piece.type.toUpperCase()] : 0);
+    }, 0);
+    const blackControl = attackers[chess.Color.BLACK].reduce((sum, sq) => {
+        const piece = board.getPiece(sq);
+        return sum + (piece ? pieceValues[piece.type.toUpperCase()] : 0);
+    }, 0);
+    let controlStatement = "## Control analysis: ";
+    if (whiteControl > blackControl) {
+        controlStatement += `White is winning (White: ${whiteControl}, Black: ${blackControl})`;
+    } else if (blackControl > whiteControl) {
+        controlStatement += `Black is winning (White: ${whiteControl}, Black: ${blackControl})`;
+    } else {
+        controlStatement += `Evenly contested (White: ${whiteControl}, Black: ${blackControl})`;
+    }
+
+    // Headers for the formatted output
+    const formattedOutput = [
+        `## Attackers/defenders of square ${square.toUpperCase()}, which currently has ${targetPieceInfo} on it.`,
+        controlStatement,
+        "## Attackers:",
+        "## Defenders:"
+    ];
+
+    // Determine if each piece is an attacker or a defender
+    for (const color of [chess.Color.WHITE, chess.Color.BLACK]) {
+        for (const attackerSquare of attackers[color]) {
+            const piece = board.getPiece(attackerSquare)!;
+            const pieceColor = piece.color === chess.Color.WHITE ? 'white' : 'black';
+            const pieceFullName = pieceNames[piece.type];
+            const description = `### ${pieceColor.charAt(0).toUpperCase() + pieceColor.slice(1)} ${pieceFullName} on ${chess.squareToString(attackerSquare)}`;
+            if (pieceColor !== targetPieceColor || targetPieceInfo === 'empty') {
+                formattedOutput[2] += `\n${description}`;
+            } else {
+                formattedOutput[3] += `\n${description}`;
+            }
+        }
+    }
+
+    // Join formatted output
+    return formattedOutput.join('\n');
+
+function pgnToGameState(gamePgn: string): string {
+    const pieceNames: { [key: string]: string } = {
+    'R': 'Rook', 'N': 'Knight', 'B': 'Bishop',
+    'Q': 'Queen', 'K': 'King', 'P': 'Pawn'
+    };
+
+    const moves = gamePgn.split(' ');
+    const descriptions = ["# Game state: The semanticized game state move by move:", "## Moves:"];
+    const capturesChecksDescriptions: string[] = [];
+
+    let moveNumber = 1;
+
+    for (let i = 0; i < moves.length; i++) {
+        const move = moves[i];
+        if (move.endsWith('.')) {
+            continue;
+        }
+
+        const color = i % 2 === 0 ? 'White' : 'Black'; // White moves on even indices, Black on odd
+
+        let moveDescription: string;
+        if (move === 'O-O' || move === 'O-O-O') { // Castling moves
+            const castling = move === 'O-O' ? 'Kingside' : 'Queenside';
+            moveDescription = `### Move ${moveNumber}. ${color} castles ${castling}`;
+        } else {
+            const pieceLetter = move[0].toUpperCase() === move[0] ? move[0] : 'P'; // Default to 'P' for Pawns
+            const piece = pieceNames[pieceLetter];
+            const capture = move.includes('x');
+            const check = move.includes('+');
+
+            // Extract destination and possibly captured piece notation
+            const destination = capture ? move.split('x')[1].replace('+', '') : move.replace('+', '');
+            const fullMove = pieceLetter === 'P' && capture ? move[0] + "x" + destination : move;
+
+            moveDescription = `### Move ${moveNumber}. ${color}'s ${piece} `;
+            moveDescription += capture ? `captures on ${destination}` : `moves to ${destination}`;
+            if (check) {
+                moveDescription += ", delivering check";
+            }
+        }
+
+        descriptions.push(moveDescription);
+
+        // Separate handling for captures and checks
+        if (capture || check) {
+            capturesChecksDescriptions.push(moveDescription);
+        }
+
+        // Increment moveNumber after Black's move
+        if (color === 'Black') {
+            moveNumber++;
+        }
+    }
+
+    // Add captures and checks sections
+    if (capturesChecksDescriptions.length > 0) {
+        descriptions.push("## Captures and Checks:");
+        descriptions.push(...capturesChecksDescriptions);
+    }
+
+    return descriptions.join('\n') + '\n';
+

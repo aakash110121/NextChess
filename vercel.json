@@ -1,0 +1,12 @@
+{
+    "routes": [
+      {
+        "src": "/api/webhook",
+        "methods": ["POST"],
+        "dest": "/api/webhook",
+        "headers": {
+          "x-vercel-deny-auth": "1"
+        }
+      }
+    ]
+  }

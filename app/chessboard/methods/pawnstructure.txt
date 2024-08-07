@@ -1,0 +1,77 @@
+export default function analyzePawnStructure(fen: string): string {
+    const board = new chess.Board(fen);
+
+    interface PawnFeatures {
+        positions: string[];
+        doubled: string[];
+        isolated: string[];
+        passed: string[];
+    }
+
+    function pawnStructure(pawns: number[], color: string, opponentColor: string): PawnFeatures {
+        const doubled: string[] = [];
+        const isolated: string[] = [];
+        const passed: string[] = [];
+        const fileOccurrences = new Array(8).fill(0);
+        const pawnPositions = pawns.map(pawn => chess.squareToString(pawn));
+
+        // Count pawns on each file to identify doubled pawns
+        for (const pawn of pawns) {
+            const file = chess.getFile(pawn);
+            fileOccurrences[file]++;
+        }
+
+        for (const pawn of pawns) {
+            const file = chess.getFile(pawn);
+
+            // Doubled Pawns
+            if (fileOccurrences[file] > 1) {
+                doubled.push(chess.squareToString(pawn));
+            }
+
+            // Isolated Pawns
+            let isolatedFlag = true;
+            for (let adjFile = Math.max(0, file - 1); adjFile <= Math.min(7, file + 1); adjFile++) {
+                if (fileOccurrences[adjFile] > 0 && adjFile !== file) {
+                    isolatedFlag = false;
+                    break;
+                }
+            }
+            if (isolatedFlag) {
+                isolated.push(chess.squareToString(pawn));
+            }
+
+            // Passed Pawns
+            let passedFlag = true;
+            for (let r = 1; r <= 7; r++) {
+                const targetSquare = chess.getSquare(file, r);
+                if (board.getPiece(targetSquare) && board.getPiece(targetSquare)!.color === opponentColor) {
+                    passedFlag = false;
+                    break;
+                }
+            }
+            if (passedFlag) {
+                passed.push(chess.squareToString(pawn));
+            }
+        }
+
+        return { positions: pawnPositions, doubled, isolated, passed };
+    }
+
+    const whitePawns = board.getPieces(chess.PieceType.PAWN, chess.Color.WHITE);
+    const blackPawns = board.getPieces(chess.PieceType.PAWN, chess.Color.BLACK);
+
+    const whiteFeatures = pawnStructure(whitePawns, 'white', 'black');
+    const blackFeatures = pawnStructure(blackPawns, 'black', 'white');
+
+    function formatOutput(color: string, features: PawnFeatures): string {
+        const labels = ["Positions", "Doubled", "Isolated", "Passed"];
+        return labels.map((label, i) => `### ${label}: ${features[label as keyof PawnFeatures].join(', ') || 'None'}`).join("\n");
+    }
+
+    let result = `# Pawn Structure Analysis for ${fen}\n`;
+    result += "## White Pawns\n" + formatOutput("White", whiteFeatures);
+    result += "\n## Black Pawns\n" + formatOutput("Black", blackFeatures);
+
+    return result;
+}

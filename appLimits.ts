@@ -1,0 +1,2 @@
+export const MAX_NUMBER_UNFINISHED_GAMES = 3;
+export const MAX_HINTS_PER_GAME = 100;
