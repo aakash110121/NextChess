@@ -20,7 +20,7 @@ import CapturedArray from "@/app/chessboard/methods/CapturedArray";
 import { IoOptions } from "react-icons/io5";
 import { FaRegThumbsUp, FaRegThumbsDown, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import ChessviaFavicon from "@/public/Chessvia-Favicon.png";
+import NextChessFavicon from "@/public/NextChess-Favicon.png";
 import ChessviaFaviconBlack from "@/public/Chessvia-Favicon-Black.png";
 //import ChessviaFaviconWhite from "@/public/Chessvia-Favicon-White.png";
 
@@ -386,7 +386,7 @@ const Board: React.FC<GameProps> = ({
   }
 
   const [evalTypologyExpanded, setEvalTypologyExpanded] = useState(true);
-  const [moveEvalVisible, setMoveEvalVisible] = useState(true);
+  const [moveEvalVisible, setMoveEvalVisible] = useState(false);
   
   return (
     <div className="lg:flex pb-10 lg:pb-0 px-2 m-auto chess-baord">
@@ -634,6 +634,8 @@ const Board: React.FC<GameProps> = ({
               )}
             </div>
           </div>
+          <p>currentPositionIndex: {currentPositionIndex}</p>
+          <p>movesArray.length: {movesArray.length}</p>
           <div className={`lg:h-[${boardWidth}px] flex flex-col `}>
                {/* Moved section */}
                <section className="flex items-center justify-between w-full bg-transparent p-1 lg:w-[500px] lg:ml-[10px] mb-0 mt-6">
@@ -642,7 +644,7 @@ const Board: React.FC<GameProps> = ({
                   <Image
                     height={40}
                     width={40}
-                    src={ChessviaFavicon}
+                    src={NextChessFavicon}
                     alt="Chessy"
                     className="h-full w-full object-contain"
                   />
@@ -667,112 +669,8 @@ const Board: React.FC<GameProps> = ({
             </section>
 
         {/* Chat container */}
-        <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col lg:grow bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
-          <section
-            id="conversationBox"
-            className="w-full flex flex-col h-[260px] lg:grow mt-2 space-y-2 overflow-auto bg-[#eeeed2] border border-gray-500 rounded-lg"
-          >
-            <div className="relative">
-              {messages &&
-                messages.map((msg: any, idx: number) =>
-                  msg.role === 'assistant' ? (
-                    <div key={idx} className="px-2 py-2">
-                      <div className="flex gap-3">
-                        <div className="w-12 h-12 bg-transparent transform scale-x-[-1] p-0.3">
-                          <Image
-                            src={ChessviaFaviconBlack}
-                            alt="usr"
-                            height={400}
-                            width={376}
-                            className="h-full w-full object-cover rounded-md"
-                          />
-                        </div>
-                        {/* Update assistant message styling */}
-                        <div className="text-sm p-5 w-[75%] bg-gradient-to-br from-[#769656] to-[#5d7a43] text-slate-100 rounded-lg relative shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 animate-[fadeIn_0.3s_ease-in-out]">
-                          <p className="break-words">
-                            {msg.content[0].text.value}
-                          </p>
-                          {/* Visible arrow */}
-                          <div className="absolute w-4 h-4 bg-[#769656] rotate-45 -left-2 top-4"></div>
-                          <div className="w-full flex justify-end space-x-2 pt-1">
-                            {responseReviewsCollection.some(obj => obj.id === msg.id && obj.rating === 'good') 
-                              ? <FaThumbsUp className="w-4 h-4 cursor-pointer text-green-600" />
-                              : <FaRegThumbsUp onClick={() => handleVote(idx, 'good')} className="w-4 h-4 cursor-pointer" />
-                            }
-                            {responseReviewsCollection.some(obj => obj.id === msg.id && obj.rating === 'bad')
-                              ? <FaThumbsDown className="w-4 h-4 cursor-pointer text-red-500" />
-                              : <FaRegThumbsDown onClick={() => handleVote(idx, 'bad')} className="w-4 h-4 cursor-pointer" />
-                            }
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div key={idx} className="px-2 py-2">
-                      <div className="flex gap-3 justify-end">
-                        {/* Update user message styling with visible arrow */}
-                        <div className="text-sm p-5 w-[75%] bg-[#eeeed2] text-gray-700 rounded-lg relative border border-[#124429] shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 animate-[fadeIn_0.3s_ease-in-out]">
-                          <p>{extractQuestion(msg.content[0].text.value)}</p>
-                          {/* Visible arrow */}
-                          <div className="absolute w-4 h-4 bg-[#eeeed2] rotate-45 -right-2 top-4 border-t border-r border-[#124429]"></div>
-                        </div>
-                        <div className="w-12 h-12 bg-transparent p-0.3">
-                          <Image
-                            src={ChessviaFavicon}
-                            alt="usr"
-                            height={400}
-                            width={376}
-                            className="h-full w-full object-cover rounded-md"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )
-                )
-              }
-            </div>
-          </section>
+        <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
 
-              {!isGameCompleted && (
-              <section className="flex h-[44px] px-0 py-1 bg-transparent text-white mb-1 mt-2">
-                <div className="rounded-full w-[85%] bg-transparent border-gray-500 border-[1px] text-white flex items-center px-4">
-                <input
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    className="h-full outline-none grow bg-white/0 text-white w-full placeholder-gray-200"
-                    onKeyDown={handleKeypress}
-                    placeholder="Send Chessy a message..."
-                  />
-                    {/* Add hover effect to send icon */}
-                    <BsFillSendFill
-                      onClick={handleCreateTextMessage}
-                      className="w-6 h-6 text-white cursor-pointer hover:text-green-300 transition-colors duration-200" 
-                    />
-                </div>
-                <div className="flex justify-center items-center w-[15%] pl-2">
-                  <div className="relative group">
-                    {/* Ensure consistent hover effect for microphone button */}
-                    <button
-                      onClick={() => {
-                        if (subscribed) {
-                          switchRecording();
-                        }
-                      }}
-                      className="p-2 rounded-full bg-[#124429] hover:bg-[#1a5c38] transition duration-300"
-                      aria-label="Start/Stop recording"
-                    >
-                      {recording ? (
-                        <FaStop className="w-5 h-5 text-red-500" />
-                      ) : (
-                        <FaMicrophone className="w-5 h-5 text-white hover:text-green-300 transition-colors duration-200" />
-                      )}
-                    </button>
-                    {!subscribed && <SubscriptionAlert />}
-                  </div>
-                </div>
-              </section>
-
-              )}
               {isGameCompleted ? <div className="h-[40px] space-x-2 pt-2 relative w-full bg-[#EEEEEE]">
                   <div className={`absolute w-full ${evalTypologyExpanded ? "h-[200px]" : "h-[40px]"} bottom-0 bg-[#EEEEEE]`}>
                     <div onClick={()=>setEvalTypologyExpanded(prevExpanded=>!prevExpanded)} className={`w-[60px] h-[30px] cursor-pointer absolute rounded-t-[20px] -top-[30px] bg-[#EEEEEE] flex items-center justify-center`}>
@@ -825,7 +723,7 @@ const Board: React.FC<GameProps> = ({
                   </div>
               </div> : 
               <section className="flex  space-x-2 pt-2 relative">
-                <button className="relative w-1/3 bg-[#124429] text-white rounded-sm border-[1px] border-white/30">
+                <button className="relative w-1/2 bg-[#124429] text-white rounded-sm border-[1px] border-white/30">
                   <div className="flex justify-between w-full items-center h-full">
                     <div
                       onClick={() => hint()}
@@ -866,37 +764,12 @@ const Board: React.FC<GameProps> = ({
                 </button>
 
                 <button
-                  onClick={() => setIsDropDown((prevDropDown) => !prevDropDown)}
-                  className="relative w-1/3 bg-[#124429] text-white flex justify-between px-2 sm:px-3 items-center gap-x-1 sm:gap-x-2 rounded-sm border-[1px] border-white/30"
-                >
-                  <p className="tracking-wide text-xs sm:text-sm">Ask Chessy</p>
-                  <MdArrowForwardIos className={`w-3 h-3 sm:w-4 sm:h-4 ${isDropDown ? "rotate-90" : ""} transition duration-200`} />
-                  {isDropDown && settings.predefinedQuestions.length > 0 && (
-                    <ul
-                      id="predefinedQuestionsElement"
-                      className="absolute left-0 z-40 w-[280px] min-h-[20px] max-h-[230px] p-2 top-9 overflow-y-auto overflow-x-hidden flex flex-col items-start gap-y-1 text-white text-start bg-green-800
-                        rounded-sm before:absolute before:content-[''] before:w-3 before:h-3 before:bg-green-800 before:rotate-45 before:right-1 before:-top-[3px]"
-                    >
-                      {settings.predefinedQuestions.map((question: string, idx: number) => (
-                        <li
-                          key={idx}
-                          onClick={() => createMessage(question, gameId)}
-                          className="bg-green-800 transition duration-200 hover:bg-green-900 border-[1px] border-white/40 shadow-sm shadow-[#124429] rounded-md p-2 w-full"
-                        >
-                          <span className="text-start text-wrap text-xs sm:text-sm">{question}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </button>
-
-                <button
                   onClick={() => {
                     if (!isGameCompleted) {
                       setNewGameMenu((prevGameMenu) => !prevGameMenu);
                     }
                   }}
-                  className="relative w-1/3 bg-[#124429] text-white flex justify-between px-2 sm:px-3 items-center gap-x-1 sm:gap-x-2 rounded-sm border-[1px] border-white/30"
+                  className="relative w-1/2 bg-[#124429] text-white flex justify-between px-2 sm:px-3 items-center gap-x-1 sm:gap-x-2 rounded-sm border-[1px] border-white/30"
                 >
                   <p className="tracking-wide text-xs sm:text-sm">Game</p>
                   <MdArrowForwardIos className={`w-3 h-3 sm:w-4 sm:h-4 ${newGameMenu ? "rotate-90" : ""} transition duration-200`} />
@@ -909,33 +782,6 @@ const Board: React.FC<GameProps> = ({
                           className="px-2 text-white bg-green-800 hover:bg-green-900 rounded-md w-full py-2 gap-x-3 border-[1px] border-white/40 shadow-sm shadow-green-900 text-xs sm:text-sm"
                         >
                           Resign Game
-                        </button>
-                      </li>
-                      <li className="flex gap-x-5 items-center justify-between">
-                        <button
-                          disabled={isGameCompleted}
-                          onClick={() => r.push("/home")}
-                          className="px-2 text-white bg-green-800 hover:bg-green-900 rounded-md w-full py-2 gap-x-3 border-[1px] border-white/40 shadow-sm shadow-green-900 text-xs sm:text-sm"
-                        >
-                          Continue Later
-                        </button>
-                      </li>
-                      <li className="flex gap-x-5 items-center justify-between">
-                        <button
-                          disabled={isGameCompleted}
-                          onClick={() => r.push("/form")}
-                          className="px-2 text-white bg-green-800 hover:bg-green-900 rounded-md w-full py-2 gap-x-3 border-[1px] border-white/40 shadow-sm shadow-green-900 text-xs sm:text-sm"
-                        >
-                          Continue Later & New Game
-                        </button>
-                      </li>
-                      <li className="flex gap-x-5 items-center justify-between">
-                        <button
-                          disabled={inProcess || isGameCompleted}
-                          onClick={handleQuickPlay}
-                          className="px-2 text-white bg-green-800 hover:bg-green-900 rounded-md w-full py-2 gap-x-3 border-[1px] border-white/40 shadow-sm shadow-green-900 text-xs sm:text-sm"
-                        >
-                          Continue Later & Quickplay
                         </button>
                       </li>
                     </ul>
