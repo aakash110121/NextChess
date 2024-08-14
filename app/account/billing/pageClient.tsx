@@ -57,17 +57,17 @@ export default function AccountClient({session, userProfile, subscription, invoi
      return (
        <>
          {Object.keys(subscription).length == 0 ? (
-           <div className="w-full h-screen bg-[#124429]">
+           <div className="w-full h-screen bg-gray-100 ">
              <section className="w-full h-full relative flex items-center flex-col justify-center space-y-10">
-               <div className="w-full flex flex-col items-center justify-center space-y-5 break-words">
-                 <p className="text-[22px] tracking-widest text-center text-white">
+               <div className="min-w-[350px] rounded-[5px] border border-stroke bg-white px-7 py-[50px] shadow-default flex flex-col items-center justify-center space-y-5 break-words">
+                 <p className="text-[22px] tracking-widest text-center text-black">
                    You dont have an active premium plan.
                  </p>
                  <button
                    onClick={() => {
                      router.push("/pricing");
                    }}
-                   className="px-5 py-3 text-[124429] rounded-md font-bold bg-white shadow-md shadow-black/40 tracking-wider text-[20px] text-[#124429]"
+                   className="px-5 py-3  rounded-md font-bold bg-black shadow-md shadow-black/40 tracking-wider text-[20px] text-[#fff]"
                  >
                    Get Premium Membership
                  </button>
@@ -131,19 +131,19 @@ export default function AccountClient({session, userProfile, subscription, invoi
              </section>
            </div>
          ) : (
-           <div className="w-full bg-[#124429] py-5">
-             <div className="w-full h-full relative lg:px-5">
+           <div className="w-full bg-gray-100 py-[70px] relative overflow-y-auto">
+             <div className="w-full h-full  lg:px-5">
                {action && (
                  <div
-                   className={`absolute left-0 right-0 h-full flex justify-center items-center`}
+                   className={`fixed z-[999] left-0 right-0  flex justify-center items-center bg-[#000000b3]  top-0 bottom-0`}
                  >
-                   <div className="rounded-md bg-[#EEEEEE] w-[360px]  break-words text-black p-4 space-y-5">
-                     <div className="w-full flex flex-col items-center justify-center space-y-2">
-                       <p className="w-full text-center font-bold">
+                   <div className="max-w-[500px]  flex flex-col items-center justify-between rounded-[5px] border border-stroke bg-white px-7 py-[40px] shadow-default">
+                     <div className="w-full flex flex-col items-center justify-center space-y-4">
+                       <p className="w-full text-center font-bold text-[18px]">
                          Are you sure you want to {action} subscription?
                        </p>
                        {action == "cancel" ? (
-                         <p className="text-[14px]">
+                         <p className="text-[14px] text-center ">
                            Note: After you cancel subscription you will still
                            have premium features untill the end of current
                            subscription period. You will also be able to
@@ -154,40 +154,40 @@ export default function AccountClient({session, userProfile, subscription, invoi
                          <p></p>
                        )}
                      </div>
-                     <div className="w-full justify-center items-center flex space-x-2">
-                       <button onClick={()=>{handleContinue()}} className="tracking-wider rounded-full font-serif text-white p-2 px-4 bg-[#131313]">
+                     <div className="w-full justify-center items-center flex space-x-2 mt-5">
+                       <button onClick={()=>{handleContinue()}} className="tracking-wider rounded-full  text-white p-2 px-4 bg-[#131313] border border-[#131313] hover:bg-[#fff] hover:text-[#131313]">
                          Continue
                        </button>
-                       <button onClick={()=>setAction(null)} className="tracking-wider rounded-full text-white font-serif p-2 px-4 bg-[#131313]">
+                       <button onClick={()=>setAction(null)} className="tracking-wider rounded-full text-white p-2 px-4 bg-[#131313] border border-[#131313] hover:bg-[#fff] hover:text-[#131313]">
                          Cancel
                        </button>
                      </div>
                    </div>
                  </div>
                )}
-               <section className="w-full p-2 pt-5 pb-0 lg:pt-2 flex flex-col lg:flex-row gap-y-2 lg:gap-x-2 lg:gap-y-0 ">
-                 <div className="w-full p-1 px-3 lg:w-1/2 rounded-sm border-[1px] border-[#13131370] bg-white shadow-md shadow-black/40">
-                   <p className="text-[22px] font-semibold text-[#124429]">Account type</p>
-                   <ul className="flex  border-t-[1px] border-[#13131330] py-1 mt-[4px]">
-                     <li className="p-2 w-1/2 border-[#13131340]">
+               <section className="w-full p-2 pt-5 pb-0 lg:pt-2 flex flex-col lg:flex-row gap-y-4 lg:gap-x-4 lg:gap-y-0 ">
+                 <div className="w-full lg:w-1/2 rounded-[5px] border border-stroke bg-white p-7 shadow-default">
+                   <p className="text-[22px] font-semibold text-[#000]">Account type</p>
+                   <ul className="flex  border-t-[1px] border-[#ddd] py-4 mt-[15px] gap-4">
+                     <li className="p-2 w-1/2 border-[2px] rounded-[5px] bg-[#F3F5F8] p-5">
                        <div className="break-words">
-                         <p className="text-[#124429] font-bold mb-2 tracking-wide">
+                         <p className="text-[#000] font-bold mb-2 tracking-wide">
                            YOUR SUBSCRIPTION
                          </p>
-                         <p className="font-semibold">
+                         <p className="font-semibold mb-2">
                            {subscription.productName}{" "}
-                           <span className="tracking-tight font-normal ml-2 text-[14px]">
+                           <span className="tracking-tight  ml-2 font-medium text-[16px]">
                              {subscription.price &&
                                subscription.price?.toLocaleString("en-US", {
                                  style: "currency",
                                  currency: "USD",
                                })}
                            </span>
-                           <span className="text-[#13131385] font-normal text-[14px]">
+                           <span className="text-[#13131385] font-medium text-[16px]">
                              /month
                            </span>
                          </p>
-                         <p>
+                         <p className="font-medium text-[16px]">
                            Usage time left:{" "}
                            {subscription.allowedUsageTime == "Unlimited"
                              ? " Unlimited"
@@ -196,30 +196,30 @@ export default function AccountClient({session, userProfile, subscription, invoi
                                )}min`}
                          </p>
                        </div>
-                       <div className="flex w-full mt-3 flex-wrap ">
-                         <button onClick={()=>router.push('/pricing')} className="p-2 mr-2 px-4 text-[14px] bg-[#124429] text-white tracking-wider rounded-md font-semibold">
+                       <div className="flex w-full mt-5 flex-wrap gap-y-1">
+                         <button onClick={()=>router.push('/pricing')} className="p-2 mr-2 px-4 text-[14px] bg-[#000] border border-[#000] hover:bg-[#fff] hover:text-[#000] text-white tracking-wider rounded-md font-semibold">
                            Upgrade
                          </button>
                          {subscription.cancel_at_period_end ? (
                            <button
                              onClick={() => setAction('reactivate')}
-                             className="p-2 px-4 text-[14px] bg-[#124429] text-white rounded-md tracking-wide font-semibold"
+                             className="p-2 px-4 text-[14px] bg-[#000] border border-[#000] hover:bg-[#fff] hover:text-[#000] text-white rounded-md tracking-wide font-semibold"
                            >
                              Reactivate
                            </button>
                          ) : (
                            <button
                              onClick={() => setAction('cancel')}
-                             className="p-2 px-4 text-[14px] bg-[#124429] text-white rounded-md tracking-wide font-semibold"
+                             className="p-2 px-4 text-[14px] bg-[#000] border border-[#000] hover:bg-[#fff] hover:text-[#000] text-white rounded-md tracking-wide font-semibold"
                            >
                              Cancel
                            </button>
                          )}
                        </div>
                      </li>
-                     <li className="w-1/2 p-2 flex flex-col justify-between">
+                     <li className="w-1/2 flex flex-col justify-between border-[2px] rounded-[5px] bg-[#F3F5F8] p-5">
                        <div className="">
-                         <p className="text-[#124429] font-bold tracking-wide mb-2">
+                         <p className="text-[#000] font-bold tracking-wide mb-2">
                            YOUR LAST BILL
                          </p>
                          <div className="flex items-center">
@@ -230,8 +230,8 @@ export default function AccountClient({session, userProfile, subscription, invoi
                                currency: "USD",
                              })}
                            </p>
-                           <p className="mx-1 text-[14px]">on</p>
-                           <p className="text-[14px]">
+                           <p className="mx-1 font-medium text-[14px]">on</p>
+                           <p className="font-medium text-[14px]">
                              {new Date(
                                subscription.start * 1000
                              ).toLocaleDateString("en-US", {
@@ -243,7 +243,7 @@ export default function AccountClient({session, userProfile, subscription, invoi
                          </div>
                        </div>
                        <div>
-                         <p className="text-[#124429] font-bold tracking-wide mb-2">
+                         <p className="text-[#000] font-bold tracking-wide mb-2">
                            YOUR NEXT BILL
                          </p>
                          <div className="flex items-center flex-wrap">
@@ -272,7 +272,7 @@ export default function AccountClient({session, userProfile, subscription, invoi
                                year: "numeric",
                              })}
                            </p>
-                           {subscription.cancel_at_period_end && <div className="text-[10px] font-thin p-1 text-white rounded-md bg-red-600">CANCELED</div>}
+                           {subscription.cancel_at_period_end && <div className="text-[10px] font-medium p-1 text-white rounded-md bg-red-600">CANCELED</div>}
                          </div>
                        </div>
                      </li>
@@ -280,29 +280,29 @@ export default function AccountClient({session, userProfile, subscription, invoi
                  </div>
 
                  {/* PAYMENT METHOD SECTION */}
-                 <div className="w-full p-1 px-3 lg:w-1/2 rounded-sm border-[1px] border-[#13131380] bg-white shadow-md shadow-black/40">
-                   <p className="text-[22px] font-semibold text-[#124429]">Payment Method</p>
+                 <div className="w-full  lg:w-1/2 rounded-[5px] border border-stroke bg-white p-7 shadow-default">
+                   <p className="text-[22px] font-semibold text-[#000]">Payment Method</p>
                    {paymentMethod ? (
-                     <div className="w-full border-t-[1px] border-[#13131330] p-3 mt-[4px] lg:flex lg:space-x-3">
+                     <div className="w-full border-t-[1px]  px-3  lg:flex lg:space-x-3  border-[#ddd] py-4 mt-[15px]">
                        <div className="lg:w-1/2">
-                         <p className="text-[#124429] font-bold tracking-wide mb-2">
+                         <p className="text-[#000] font-bold tracking-wide mb-2">
                            PAYMENT DETAILS
                          </p>
                          <div className="p-1">
-                           <span className="text-[14px] text-[#0a0a0a]">
+                           <span className="font-medium text-[16px] text-[#0a0a0a]">
                              Card
                            </span>
-                           <div className="w-full  h-8 px-2 border-[1px] border-[#13131330] flex items-center justify-between">
+                           <div className="w-full  border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black flex items-center justify-between">
                              <p className="truncate">
                                **** **** **** {paymentMethod.card.last4}
                              </p>
                              <FaCcVisa className="w-6 h-6"/>
                            </div>
                            <div className="mt-3 w-full ">
-                             <span className="text-[14px] text-[#0a0a0a]">
+                             <span className="font-medium text-[16px] text-[#0a0a0a]">
                                Name
                              </span>
-                             <div className="w-full  h-8 px-2 border-[1px] border-[#13131330] flex items-center">
+                             <div className="w-full  border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black flex items-center">
                                <p className="truncate">
                                  {paymentMethod.billing_details.name}
                                </p>
@@ -311,15 +311,15 @@ export default function AccountClient({session, userProfile, subscription, invoi
                          </div>
                        </div>
                        <div className="lg:w-1/2">
-                         <p className="text-[#124429] font-bold tracking-wide mb-2">
+                         <p className="text-[#000] font-bold tracking-wide mb-2">
                            BILLING ADDRESS
                          </p>
                          {paymentMethod.billing_details && (
                            <div className="p-1">
-                             <span className="text-[14px] text-[#0a0a0a]">
+                             <span className="font-medium text-[16px] text-[#0a0a0a]">
                                Billing Addres
                              </span>
-                             <div className="h-8 w-full border-[1px] px-2 flex items-center border-[#13131330]">
+                             <div className=" w-full flex items-center border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black">
                                {paymentMethod.billing_details.address
                                  .postal_code
                                  ? paymentMethod.billing_details.address
@@ -328,10 +328,10 @@ export default function AccountClient({session, userProfile, subscription, invoi
                              </div>
                              <ul className="w-full  flex space-x-3 mt-3">
                                <li className="w-1/3">
-                                 <span className="text-[14px] text-[#0a0a0a]">
+                                 <span className="font-medium text-[16px] text-[#0a0a0a]">
                                    City
                                  </span>
-                                 <div className="w-full h-8 border-[1px] border-[#13131330] px-1 flex items-center">
+                                 <div className="w-full border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black flex items-center">
                                    <p className="truncate">
                                      {paymentMethod.billing_details.address.city
                                        ? paymentMethod.billing_details.address
@@ -341,10 +341,10 @@ export default function AccountClient({session, userProfile, subscription, invoi
                                  </div>
                                </li>
                                <li className="w-1/3">
-                                 <span className="text-[14px] text-[#0a0a0a]">
+                                 <span className="font-medium text-[16px] text-[#0a0a0a]">
                                    State
                                  </span>
-                                 <div className="w-full h-8 border-[1px] border-[#13131330] px-1 flex items-center">
+                                 <div className="w-full border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black flex items-center">
                                    <p className="truncate">
                                      {paymentMethod.billing_details.address
                                        .country
@@ -355,10 +355,10 @@ export default function AccountClient({session, userProfile, subscription, invoi
                                  </div>
                                </li>
                                <li className="w-1/3">
-                                 <span className="text-[14px] text-[#0a0a0a]">
+                                 <span className="font-medium text-[16px] text-[#0a0a0a]">
                                    Zip
                                  </span>
-                                 <div className="w-full h-8 border-[1px] border-[#13131330] px-1 flex items-center">
+                                 <div className="w-full border-[2px] rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black flex items-center">
                                    <p className="truncate">
                                      {paymentMethod.billing_details.address.city
                                        ? paymentMethod.billing_details.address
@@ -379,34 +379,34 @@ export default function AccountClient({session, userProfile, subscription, invoi
                    )}
                  </div>
                </section>
-               <section className="w-full p-2">
-                 <div className="rounded-sm border-[1px] border-[#13131370] p-2 bg-white shadow-md shadow-black/40">
-                   <div className="pb-2 w-full border-b-[1px] border-[#13131360]">
-                     <p className="text-[22px] font-semibold text-[#124429]">
+               <section className="w-full p-2 mt-5">
+                 <div className="rounded-[5px] border border-stroke bg-white p-7 shadow-default">
+                   <div className=" w-full border-b-[1px]  border-[#ddd] py-4 ">
+                     <p className="text-[22px] font-semibold text-[#000]">
                        Billing history
                      </p>
                    </div>
                    <ul className="relative space-y-2 max-h-[380px] overflow-y-auto overflow-x-hidden">
-                     <li className="grid grid-cols-10 mt-4 text-[#124429] text-[14px] sticky top-0 bg-white">
-                       <div className="col-span-5">Invoice name</div>
-                       <div className="col-span-2">Amount</div>
-                       <div className="col-span-2">Date</div>
-                       <div className="col-span-1">Options</div>
+                     <li className="grid grid-cols-10 mt-4 text-[#000] sticky top-0 bg-white">
+                       <div className="col-span-5 font-medium text-[16px]">Invoice name</div>
+                       <div className="col-span-2 font-medium text-[16px]">Amount</div>
+                       <div className="col-span-2 font-medium text-[16px]">Date</div>
+                       <div className="col-span-1 font-medium text-[16px]">Options</div>
                      </li>
                      {invoices && Object.keys(invoices).length > 0 &&
                        invoices.map((item: any, idx: number) => (
                          <li
                            key={idx}
-                           className="grid grid-cols-10 text-[12px] py-4 border-[1px] border-[#13131370] text-[#13131370]"
+                           className="grid grid-cols-10 text-[12px] py-4 border-[2px] rounded-[5px] bg-[#F3F5F8] px-2"
                          >
                            <div className="col-span-5 px-1">
-                             <span className="font-bold text-[#13131395] mr-2">
+                             <span className="font-bold text-[#000] mr-2">
                                {item.number}
                              </span>
-                             <span>{item.lines.data[item.lines.data.length-1].description}</span>
+                             <span className="font-medium text-[12px]">{item.lines.data[item.lines.data.length-1].description}</span>
                            </div>
                            <div className="col-span-2 px-1">
-                             <span className="font-bold text-[#13131395]">
+                             <span className="font-bold text-[#000]">
                                {(item.total / 100).toLocaleString("en-US", {
                                  style: "currency",
                                  currency: "USD",
@@ -414,7 +414,7 @@ export default function AccountClient({session, userProfile, subscription, invoi
                              </span>
                            </div>
                            <div className="col-span-2 px-1">
-                             <span className="font-bold text-[#13131395]">
+                             <span className="font-bold text-[#000]">
                                {new Date(
                                  item.created * 1000
                                ).toLocaleDateString("en-US", {

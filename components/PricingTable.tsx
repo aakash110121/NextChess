@@ -124,8 +124,8 @@ export default function PricingTable({userId, subscription, trial=false, text=''
     const [step, setStep] = useState(0);
 
   return (
-    <div className=" bg-[#124429] w-full min-h-screen px-2 py-3 pb-10 overflow-x-hidden fixed z-[200] left-0 right-0 top-0 bottom-0">
-      <div className="fixed hidden md:flex w-full bottom-0 h-5 bg-gradient-to-t from-[#124429] to-[#1244293b] z-[10] "></div>
+    <div className=" bg-[#f1f5f9] w-full min-h-screen px-2 py-[70px] pb-10 overflow-x-hidden fixed z-[200] left-0 right-0 top-0 bottom-0">
+      <div className="fixed hidden md:flex w-full bottom-0 h-5 bg-gradient-to-t from-[#0f172a] to-[#1244293b] z-[10] "></div>
       {priceId ? 
           <div className="fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center z-20 bg-[#12442950] backdrop-blur-sm">
              {step == 0 ? 
@@ -163,14 +163,14 @@ export default function PricingTable({userId, subscription, trial=false, text=''
                  </div>
              </div> }
           </div> : <></>}
-  <div className="max-w-7xl mx-auto flex flex-col">
+  <div className="max-w-[1600px]  mx-auto flex flex-col">
     <div className="text-center mb-3">
-      <h1 className="font-bold text-xl text-white">
+      <h1 className="font-bold text-xl text-black mb-5">
          You have reached the limit for the free tier. You can play again in {text} or try one of our premium tiers for free.
       </h1>
      
     </div>
-    <div className="w-[235px] h-[50px] bg-[#0b2517] rounded-md mx-auto mb-5 p-[4px] flex z-[100]">
+    <div className="w-[235px] h-[50px] bg-[#0b2517] rounded-md mx-auto mb-[70px] p-[4px] flex z-[100]">
       <div
         onClick={() => handleProgramCycle("monthly")}
         className={`w-1/2 h-full cursor-pointer transition-all duration-200 ease-in-out text-center flex items-center justify-center rounded-md ${
@@ -193,7 +193,7 @@ export default function PricingTable({userId, subscription, trial=false, text=''
       </div>
     </div>
     {!isLoadingPage && <motion.div
-      className="flex flex-col md:flex-row px-2 md:px-0 md:gap-y-0 md:gap-x-0 flex-grow"
+      className="flex flex-col md:flex-row px-2 md:px-0 md:gap-y-0 md:gap-x-6 flex-grow"
       initial={{ opacity: 0, y: -80 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -205,7 +205,7 @@ export default function PricingTable({userId, subscription, trial=false, text=''
       }}
     >
       {products.map((product, idx: number) => (
-        product.period == programCycle && <div key={idx} className="w-full md:w-1/4 bg-white shadow hover:scale-105 shadow-black/40 hover:shadow-xl hover:shadow-black/40 transition duration-100 ease-in-out p-6 flex flex-col">
+        product.period == programCycle && <div key={idx} className="w-full md:w-1/4  hover:border-[#000]  transition duration-100 ease-in-out p-6 flex flex-col border border-slate-200 rounded-lg  bg-white shadow-default">
           <SubscriptionPlanCard 
           product={product} 
           userId={userId} 

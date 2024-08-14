@@ -18,11 +18,11 @@ interface LayoutProps {
 
 const AccordionContainer = ({ handleClick, isSomeActive, data, turn, setTurn }: LayoutProps) => {
     return (
-        <div className='items-center flex flex-col lg:mt-7 w-full max-w-[1000px] my-5 px-4'>
-            <span className='text-5xl md:text-3xl font-semibold text-center mb-4'>
+        <div className='items-center flex flex-col lg:mt-7 w-full max-w-[1200px] my-5  rounded-[5px] border border-stroke bg-white p-7 shadow-default'>
+            <span className='text-5xl md:text-3xl font-semibold text-center mt-6'>
                 Frequently Asked Questions
             </span>
-            <div className='flex w-full mb-4 justify-end mt-4'>
+            <div className='flex w-full mb-4 justify-end mt-4 '>
                 <button
                     className="flex items-center border-[1px] border-[#124419] space-x-1 text-sm font-bold lg:text-base lg:space-x-2 py-2 px-4 bg-slate-50"
                     onClick={handleClick}

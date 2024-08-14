@@ -17,7 +17,7 @@ interface TierCardProps {
 export default function SubscriptionPlanCard({product, userId, subscription, trial=false, loading, handleSetPriceId, handleUpdate, handleGetStarted, handleInstantUpgrade}:TierCardProps){
     return(
         <>
-          <div className="relative w-1/2 max-w-[120px] aspect-square border-[1px] border-[#124429] p-1 rounded-md">
+          <div className="relative w-1/2 max-w-[70px] aspect-square border border-slate-200 rounded-full  bg-white mx-auto mt-[-50px]">
             <Image
               src={`${product.image}`}
               alt="Description of image"
@@ -25,9 +25,9 @@ export default function SubscriptionPlanCard({product, userId, subscription, tri
               objectFit="cover"
             />
           </div>
-          <h3 className="text-[#124429] text-lg">{product.name}</h3>
-          <p className="text-[#124429] mt-1">
-            <span className="font-bold text-[#124429] text-4xl">{(product.default_price?.unit_amount / 100).toLocaleString(
+          <h3 className="text-[#000] text-lg font-semibold mt-5 mb-2">{product.name}</h3>
+          <p className="text-[#000] mt-1 mb-2">
+            <span className="font-bold text-[#000] text-4xl">{(product.default_price?.unit_amount / 100).toLocaleString(
                 "en-US",
                 {
                   style: "currency",
@@ -36,8 +36,8 @@ export default function SubscriptionPlanCard({product, userId, subscription, tri
               )}</span>{" "}
             /{product.period=='monthly' ? 'Month' : 'Year'}
           </p>
-          <div className="md:h-[120px] overflow-hidden pt-2">
-            <span className="text-sm text-[#124429]">
+          <div className="md:h-[140px] overflow-hidden pt-2">
+            <span className="text-sm text-[#000]">
                <p className="break-words">{product.description}</p>
             </span>
           </div>
@@ -58,7 +58,7 @@ export default function SubscriptionPlanCard({product, userId, subscription, tri
             }
             }}
             disabled={loading} 
-            className="w-full group hover:text-[#124429] border hover:border-[#124429] hover:bg-white font-semibold tracking-wider rounded bg-[#124429] text-white hover:shadow-xl hover:shadow-black/30 transition duration-150 ease-in-out h-[58px] mt-4">
+            className="w-full group hover:text-[#000]  hover:border-[#000] hover:bg-white  tracking-wider border  transition duration-150 ease-in-out mt-4 bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center mb-4">
            {loading? <AiOutlineLoading3Quarters className={`text-white group-hover:text-[#124429] animate-spin m-auto`}></AiOutlineLoading3Quarters> : 
             trial ? "Try For Free" : 
             Object.keys(subscription).length > 0
@@ -71,33 +71,15 @@ export default function SubscriptionPlanCard({product, userId, subscription, tri
           </button>
           <ul
             role="list"
-            className="flex flex-col gap-y-1 text-[#124429] pt-4 overflow-auto"
+            className="flex flex-col gap-y-1 text-[#000] pt-4 overflow-auto"
           >
             {product.features &&
               product.features.map((feature: any, idx: number) => (
-                <li key={idx} className="flex gap-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="18"
-                    height="18"
-                    className="flex-shrink-0 mt-[2px]"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      fill="#124429"
-                      className="circle"
-                    />
-                    <path
-                      d="M6 12l4 4 8-8"
-                      stroke="white"
-                      strokeWidth="2"
-                      fill="none"
-                      className="checkmark"
-                    />
-                  </svg>
+                <li key={idx} className="flex gap-x-2 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 h-5 w-5 text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
                   <span className="text-sm">{feature}</span>
                 </li>
               ))}

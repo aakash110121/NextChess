@@ -141,7 +141,7 @@ const Board: React.FC<GameProps> = ({
     query: '(max-width: 430px)'
   });
 
-  let boardWidth = 800;
+  let boardWidth = 700;
 
   if (isSmallMobile) {
     boardWidth = 350;
@@ -389,7 +389,7 @@ const Board: React.FC<GameProps> = ({
   const [moveEvalVisible, setMoveEvalVisible] = useState(true);
   
   return (
-    <div className="lg:flex pb-10 lg:pb-0 px-2 m-auto">
+    <div className="lg:flex pb-10 lg:pb-0 px-2 m-auto chess-baord">
       {isLoading ? (
         <div className="flex items-center justify-center w-full h-full">
           <p className="text-white">Loading Chessboard...</p>
@@ -397,13 +397,13 @@ const Board: React.FC<GameProps> = ({
       ) : (
         <>
           <div
-            className={`relative flex justify-center md:text-center max-w-[${boardWidth}px] max-h-[${boardWidth}px] `}
+            className={`relative flex justify-center md:text-center max-w-[${boardWidth}px] max-h-[${boardWidth}px] rounded-[5px] border border-stroke bg-white p-7 shadow-default`}
           >
             {" "}
             {/* Centering for md and below */}
             {(chess.isGameOver() || isGameCompleted) && (currentPositionIndex == movesArray.length) && (
-              <div className="absolute top-0 w-full h-full z-10 flex justify-center items-center">
-                <div className="w-[95%] p-2 py-5 max-h-[550px] text-black bg-[#EEEEEE] shadow-md shadow-black/50 rounded-sm flex flex-col items-center justify-between">
+              <div className="absolute top-0 w-full h-full z-10 flex justify-center items-center bg-[#000000b3] rounded-[5px]">
+                <div className="w-[95%] p-2  text-black flex flex-col items-center justify-between rounded-[5px] border border-stroke bg-white p-7 shadow-default">
                   <Image
                     src="/chessvia.png"
                     alt="chessviaLogo"
@@ -411,6 +411,7 @@ const Board: React.FC<GameProps> = ({
                     height={200}
                     className="w-[30%]"
                   ></Image>
+                  
                   {(chess.isDraw() ||
                     chess.isInsufficientMaterial() ||
                     chess.isThreefoldRepetition()) && (
@@ -468,21 +469,21 @@ const Board: React.FC<GameProps> = ({
                         setInProcess(true);
                         r.push("/form");
                       }}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-2 mx-auto"
+                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
                     >
                       New Game
                     </button>
                     <button
                       disabled={inProcess}
                       onClick={() => {console.log("...")}}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-2 mx-auto"
+                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
                     >
                       Review Game
                     </button>
                     <button
                       disabled={inProcess}
                       onClick={() => handleQuickPlay()}
-                      className="w-full  rounded-lg   text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-2 mx-auto"
+                      className="w-full  rounded-lg   text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
                     >
                       Quickplay
                     </button>
@@ -492,7 +493,7 @@ const Board: React.FC<GameProps> = ({
                         setInProcess(true);
                         r.push("/home");
                       }}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-2 mx-auto"
+                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
                     >
                       Home
                     </button>
@@ -633,32 +634,32 @@ const Board: React.FC<GameProps> = ({
               )}
             </div>
           </div>
-          <div className={`lg:h-[${boardWidth}px] flex flex-col`}>
+          <div className={`lg:h-[${boardWidth}px] flex flex-col `}>
                {/* Moved section */}
                <section className="flex items-center justify-between w-full bg-transparent p-1 lg:w-[500px] lg:ml-[10px] mb-0 mt-6">
               <div className="flex items-center space-x-2 relative">
-                <div className="h-12 w-12 rounded-sm transform scale-x-[-1]">
+                <div className="h-12 w-12 rounded-full transform scale-x-[-1] bg-white p-3">
                   <Image
-                    height={500}
-                    width={470}
+                    height={40}
+                    width={40}
                     src={ChessviaFavicon}
                     alt="Chessy"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                 </div>
 {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
                 {/* Updated chat bubble with inline animation and arrow */}
-                <div className="absolute left-10 top-1  bg-gray-200 p-2 rounded-xl text-sm animate-[fadeIn_0.3s_ease-in-out] shadow-md">
+                <div className="absolute left-[50px] top-1  bg-gray-200 p-2 rounded-xl text-sm animate-[fadeIn_0.3s_ease-in-out] shadow-md">
                   { isPlayingAudio?  <div id="wave" className="wave-container hidden">
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-  <div className="wave-bar"></div>
-</div> :
-                    <div className="w-[240px] lg:w-[400px]"><p>{chessyComment}</p></div>}
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                    <div className="wave-bar"></div>
+                  </div> :
+                    <div className="w-[220px] lg:w-[400px]"><p>{chessyComment}</p></div>}
                   {/* Added arrow */}
                   <div className="absolute w-2 h-3 bg-gray-200 rotate-45 -left-1.5 top-4"></div>
                 </div>
@@ -666,7 +667,7 @@ const Board: React.FC<GameProps> = ({
             </section>
 
         {/* Chat container */}
-        <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col lg:grow bg-[#124429] mb-[4px] mt-1 lg:mt-3">
+        <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col lg:grow bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
           <section
             id="conversationBox"
             className="w-full flex flex-col h-[260px] lg:grow mt-2 space-y-2 overflow-auto bg-[#eeeed2] border border-gray-500 rounded-lg"
@@ -823,17 +824,17 @@ const Board: React.FC<GameProps> = ({
                     </div>}
                   </div>
               </div> : 
-              <section className="flex h-[40px] space-x-2 pt-2 relative">
+              <section className="flex  space-x-2 pt-2 relative">
                 <button className="relative w-1/3 bg-[#124429] text-white rounded-sm border-[1px] border-white/30">
                   <div className="flex justify-between w-full items-center h-full">
                     <div
                       onClick={() => hint()}
-                      className="px-2 sm:px-3 grow text-start tracking-wide text-sm sm:text-sm"
+                      className="p-2 sm:p-3 grow text-start tracking-wide text-sm sm:text-sm"
                     >
                       <p className="text-xs sm:text-sm">Hint: {hintOption == 1 ? "Piece" : "Arrow"}</p>
                     </div>
                     <div
-                      className="px-2 sm:px-3  h-full flex items-center justify-center rounded-r-sm"
+                      className="pr-2 sm:pr-3  h-full flex items-center justify-center rounded-r-sm"
                       onClick={() => setHintDD((prevHintDD) => !prevHintDD)}
                     >
                       <MdArrowForwardIos
@@ -946,7 +947,7 @@ const Board: React.FC<GameProps> = ({
               {/*BUTTONS*/}
             </div>
             <div
-              className={`lg:ml-[10px] bg-black/80 border-[#212121] rounded-sm w-full lg:w-[500px] h-[220px] flex flex-col justify-between
+              className={`lg:ml-[10px] bg-black/80 border-[#212121] mt-5 w-full lg:w-[500px] flex flex-col justify-between rounded-[5px] border border-stroke p-7 shadow-default
              `}
             >
               <div className="w-full">

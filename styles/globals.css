@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,7 +99,11 @@ textarea:focus {
   transition-property: all;
   transition:0.2s ease-in-out;
 }
-
+#MenuPagesContainer li span svg {
+  width: 20px;
+  height: 20px;
+  color: #1c683f;
+}
 #HP-NewGameButton:hover .HomePageButtonsCover-1,
 #HP-Quickplay:hover .HomePageButtonsCover-2,
 #HP-Settings:hover .HomePageButtonsCover-3,
@@ -114,7 +120,134 @@ textarea:focus {
   transition-duration: 300ms;
   
 }
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)
+}
 
+.shadow,.shadow-1 {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-1 {
+  --tw-shadow: 0px 1px 3px rgba(0,0,0,.08);
+  --tw-shadow-colored: 0px 1px 3px var(--tw-shadow-color)
+}
+
+.shadow-10 {
+  --tw-shadow: 0px 1px 2px 0px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0px 1px 2px 0px var(--tw-shadow-color)
+}
+
+.shadow-10,.shadow-11 {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-11 {
+  --tw-shadow: 0px 1px 3px 0px rgba(166,175,195,.4);
+  --tw-shadow-colored: 0px 1px 3px 0px var(--tw-shadow-color)
+}
+
+.shadow-12 {
+  --tw-shadow: 0px 0.5px 3px 0px rgba(0,0,0,.18);
+  --tw-shadow-colored: 0px 0.5px 3px 0px var(--tw-shadow-color)
+}
+
+.shadow-12,.shadow-13 {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-13 {
+  --tw-shadow: 0px 1px 3px 0px rgba(0,0,0,.08);
+  --tw-shadow-colored: 0px 1px 3px 0px var(--tw-shadow-color)
+}
+
+.shadow-14 {
+  --tw-shadow: 0px 2px 3px 0px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0px 2px 3px 0px var(--tw-shadow-color)
+}
+
+.shadow-14,.shadow-2 {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-2 {
+  --tw-shadow: 0px 1px 4px rgba(0,0,0,.12);
+  --tw-shadow-colored: 0px 1px 4px var(--tw-shadow-color)
+}
+
+.shadow-9 {
+  --tw-shadow: 0px 2px 3px hsla(0,0%,72%,.5);
+  --tw-shadow-colored: 0px 2px 3px var(--tw-shadow-color)
+}
+
+.shadow-9,.shadow-card {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-card {
+  --tw-shadow: 0px 1px 3px rgba(0,0,0,.12);
+  --tw-shadow-colored: 0px 1px 3px var(--tw-shadow-color)
+}
+
+.shadow-card-2 {
+  --tw-shadow: 0px 1px 2px rgba(0,0,0,.05);
+  --tw-shadow-colored: 0px 1px 2px var(--tw-shadow-color)
+}
+
+.shadow-card-2,.shadow-default {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-default {
+  --tw-shadow: 0px 8px 13px -3px rgba(0,0,0,.07);
+  --tw-shadow-colored: 0px 8px 13px -3px var(--tw-shadow-color)
+}
+
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgba(0,0,0,.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color)
+}
+
+.shadow-inner,.shadow-md {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color)
+}
+
+.shadow-sm,.shadow-switch-1 {
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.shadow-switch-1 {
+  --tw-shadow: 0px 0px 5px rgba(0,0,0,.15);
+  --tw-shadow-colored: 0px 0px 5px var(--tw-shadow-color)
+}
+
+.shadow-switcher {
+  --tw-shadow: 0px 2px 4px rgba(0,0,0,.2),inset 0px 2px 2px #fff,inset 0px -1px 1px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0px 2px 4px var(--tw-shadow-color),inset 0px 2px 2px var(--tw-shadow-color),inset 0px -1px 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+body{font-family: "Montserrat", sans-serif;}
+.bg-gray-100 {
+  background: #f1f5f9;
+}
+.wide-ft {
+  width: 40%;
+}
+.wide-st {
+  width: 60%;
+}
 .wave-container {
   display: flex;
   align-items: center;
@@ -130,7 +263,9 @@ textarea:focus {
   animation: wave 1s infinite ease-in-out;
   border-radius: 5px;
 }
-
+.wide-ft {
+    width: 40%;
+}
 /* Define the animation */
 @keyframes wave {
   0%, 100% {
@@ -162,4 +297,22 @@ textarea:focus {
 }
 .wave-bar:nth-child(7) {
   animation-delay: 0s;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

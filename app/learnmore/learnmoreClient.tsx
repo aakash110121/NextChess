@@ -48,7 +48,7 @@ const LearnMore = ({ lout }: any) => {
       )}
 
       {/* About Us Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between px-[15%] py-16 bg-gray-200">
+      <div className="flex flex-col md:flex-row items-center justify-between px-[15%] py-16 bg-white-200">
         <div className="w-full md:w-1/3 text-center mb-6 md:mb-0">
           <div className="relative w-60 h-60 mx-auto">
             <div className="absolute inset-0 rounded-full border-8 border-[#124429]"></div>
@@ -77,7 +77,7 @@ const LearnMore = ({ lout }: any) => {
       <div className="px-[15%] py-8 bg-gray-100">
         <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">Let&apos;s face it - Chess coaching could be better</h2>
         <div className="flex flex-wrap md:flex-nowrap gap-4 justify-center">
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -89,7 +89,7 @@ const LearnMore = ({ lout }: any) => {
               Chess coaching costs $25-30 per hour on average, and upwards of $200 for master coaches.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -101,7 +101,7 @@ const LearnMore = ({ lout }: any) => {
               Coaching methodologies are decades old and coaches lack deep knowledge of their students.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -113,7 +113,7 @@ const LearnMore = ({ lout }: any) => {
               Coaches are scattered across multiple sites, time zones, and payment platforms.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -132,7 +132,7 @@ const LearnMore = ({ lout }: any) => {
       <div className="px-[15%] py-8 bg-gray-200">
         <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">So we created Chessy - A cheaper, stronger, more personalized AI chess coach</h2>
         <div className="flex flex-wrap md:flex-nowrap gap-4 justify-center">
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -144,7 +144,7 @@ const LearnMore = ({ lout }: any) => {
               Chessy costs as little as ~$2-$3 per coaching hour and provides more value to students.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -156,7 +156,7 @@ const LearnMore = ({ lout }: any) => {
               Coaching methodologies are decades old and coaches lack deep knowledge of their students.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -168,7 +168,7 @@ const LearnMore = ({ lout }: any) => {
               Our custom algorithms learn player’s strengths, weaknesses, and play styles in minutes.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5">
             <Image
               width={160}
               height={160}
@@ -187,7 +187,7 @@ const LearnMore = ({ lout }: any) => {
       <div className="px-[15%] py-8 bg-gray-100">
         <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">Chessy is built from the ground up with AI</h2>
         <div className="flex flex-wrap md:flex-nowrap gap-4 justify-center">
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default ">
             <Image
               width={160}
               height={160}
@@ -199,7 +199,7 @@ const LearnMore = ({ lout }: any) => {
               Chessy is your personalized AI chess coach. Play games with Chessy, chat with him or just analyze and learn.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center  text-gray-800 rounded-[5px] border border-stroke bg-white p-7 shadow-default ">
             <Image
               width={160}
               height={160}
@@ -211,7 +211,7 @@ const LearnMore = ({ lout }: any) => {
               Built from the ground-up to be multi-modal, Chessy takes in voice, text, or images as input.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center rounded-[5px] border border-stroke bg-white p-7 shadow-default my-5text-gray-800">
             <Image
               width={160}
               height={160}
@@ -223,7 +223,7 @@ const LearnMore = ({ lout }: any) => {
               Our proprietary AI algorithms analyze your moves live and enable Chessy to understand the position and explain it.
             </p>
           </div>
-          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center p-3 py-5 text-gray-800">
+          <div className="flex flex-col w-full md:w-1/4 justify-center text-center items-center rounded-[5px] border border-stroke bg-white p-7 shadow-default text-gray-800">
             <Image
               width={160}
               height={160}

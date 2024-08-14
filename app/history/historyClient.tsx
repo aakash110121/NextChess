@@ -126,8 +126,7 @@ export default function HistoryClient({gamesArray, session, chessName, lout}:any
 
             {gamesList.map((game: any, idx: number) => (
               (gamesList.length-1 == idx) ?
-              <div ref={lastElementView} key={idx} className="rounded-sm p-1 border-[1px] border-black/20 flex
-               bg-white shadow-md">
+              <div ref={lastElementView} key={idx} className="rounded-[5px] border border-stroke bg-white p-4 shadow-default flex">
                 <div onClick={()=>handleLoadGame(game.gameId)} className="h-[180px] relative cursor-pointer w-[180px]">
                 <Chessboard
                   id="board"
@@ -144,13 +143,13 @@ export default function HistoryClient({gamesArray, session, chessName, lout}:any
                 />
                 <div className="absolute top-0 w-full h-full z-20 cursor-pointer"></div>
                 </div>
-                 <section className="w-full text-gray-800 grid grid-rows-5 px-2 max-h-[180px]">
+                 <section className="w-full text-gray-800 grid grid-rows-5 px-4 max-h-[180px]">
                      <div className="row-span-2 flex flex-col">
                           <span className="font-semibold underline tracking-wide">Game parameters</span>
                           <span className="text-[15px]">Level: {game.difficultyLevel}</span>
                           <span className="text-[15px]">Chessy: {game.chessyPersonality}</span>
                      </div>
-                     <div className="row-span-2 flex flex-col justify-center items-center space-y-[2px] ">
+                     <div className="row-span-2 flex flex-col  space-y-[2px] ">
                            <span className="text-[15px] font-semibold tracking-wide">{chessName} vs. Computer</span>
                            {game.isCompleted ? 
                            <span className={`tracking-wide font-semibold ${game.isCompleted[1] == 'd' ? 
@@ -165,8 +164,7 @@ export default function HistoryClient({gamesArray, session, chessName, lout}:any
                      </div>
                  </section>
               </div> :
-              <div key={idx} className="rounded-sm p-1 border-[1px] border-black/20 flex
-              bg-white shadow-md">
+              <div key={idx} className="rounded-[5px] border border-stroke bg-white p-4 shadow-default flex ">
                <div onClick={()=>handleLoadGame(game.gameId)} className="h-[180px] relative cursor-pointer w-[180px]">
                <Chessboard
                  id="board"
@@ -183,13 +181,13 @@ export default function HistoryClient({gamesArray, session, chessName, lout}:any
                />
                <div className="absolute top-0 w-full h-full z-20 cursor-pointer"></div>
                </div>
-                <section className="w-full text-gray-800 grid grid-rows-5 px-2 max-h-[180px]">
-                <div className="row-span-2 flex flex-col">
+                <section className="w-full text-gray-800 grid grid-rows-5 px-4 max-h-[180px] ">
+                  <div className="row-span-2 flex flex-col">
                           <span className="font-semibold underline tracking-wide">Game parameters</span>
                           <span className="text-[15px]">Level: {game.difficultyLevel}</span>
                           <span className="text-[15px]">Chessy: {game.chessyPersonality}</span>
                      </div>
-                    <div className="row-span-2 flex flex-col justify-center items-center space-y-[2px] ">
+                    <div className="row-span-2 flex flex-col  space-y-[2px] ">
                           <span className="text-[15px] font-semibold tracking-wide">{chessName} vs. Computer</span>
                           {game.isCompleted ? 
                           <span className={`tracking-wide font-semibold ${game.isCompleted[1] == 'd' ? 

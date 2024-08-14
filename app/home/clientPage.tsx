@@ -243,7 +243,7 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
       )}
       <div className="w-full gap-y-3 flex flex-col py-6">
         <div className="w-full px-4 flex justify-center mt-3">
-          <div className="flex flex-wrap justify-center w-full max-w-[1000px] gap-4">
+          <div className="flex flex-wrap justify-center w-full max-w-[1200px] gap-4 px-2">
             <div className="flex w-full justify-center gap-4">
               <div className="w-full text-xl md:text-2xl font-semibold text-center">
                 Your Profile
@@ -253,34 +253,32 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
               </div>
             </div>
             <div className="flex w-full justify-center gap-4">
-              <section className="flex-1 rounded-md border-[1px] shadow-[#12442947] shadow-lg bg-white min-w-[350px] p-4">
+              <section className="flex-1 min-w-[350px] rounded-[5px] border border-stroke bg-white p-7 shadow-default">
                 <div className="pt-2 flex flex-col gap-2">
-                  <div className="w-full relative py-3 rounded-lg bg-gray-200 flex justify-center items-center font-medium text-[16px] border-[2px] border-[#124429] text-[#124429] h-12">
+                  <div className="w-full relative flex justify-center items-center font-medium text-[16px] border-[2px] rounded-[5px] bg-[#F3F5F8] px-7 py-2  font-medium text-black ">
                     <p className="z-10">Username: {user.chessName}</p>
                   </div>
-                  <div className="w-full relative py-3 rounded-lg bg-gray-200 flex justify-center items-center font-medium text-[16px] border-[2px] border-[#124429] text-[#124429] h-12">
+                  <div className="w-full relative flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-2  font-medium text-black ">
                     <p className="z-10">Email: {user.email}</p>
                   </div>
-                  <div className="w-full relative py-3 rounded-lg bg-gray-200 flex justify-center items-center font-medium text-[16px] border-[2px] border-[#124429] text-[#124429] h-12">
+                  <div className="w-full  relative flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-2  font-medium text-black ">
                     <p className="z-10">Subscription: [placeholder]</p>
                   </div>
-                  <div className="w-full relative py-3 rounded-lg bg-gray-200 flex justify-center items-center font-medium text-[16px] border-[2px] border-[#124429] text-[#124429] h-12">
+                  <div className="w-full  relative flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-2  font-medium text-black ">
                     <p className="z-10">Chessvia ELO: {user?.ELO ? user.ELO : user.rating ? user.rating : 442}</p>
                   </div>
                 </div>
               </section>
-              <section className="flex-1 rounded-md border-[1px] shadow-[#12442947] shadow-lg bg-white min-w-[350px] py-4 px-4 flex flex-col justify-end">
+              <section className="flex-1 min-w-[350px]  rounded-[5px] border border-stroke bg-white p-8 shadow-default">
                 <section
                   ref={containerRef}
                   id="HomePageButtonsContainer"
-                  className={`grid grid-cols-1 gap-x-2 gap-y-3 max-w-[1000px]`}
+                  className={`flex flex-wrap justify-between max-w-[1200px] gap-4`}
                 >
                   <div
                     id="HP-NewGameButton"
                     onClick={() => router.push("/form")}
-                    className="w-full py-3 gap-x-3 relative group rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[18px] shadow-[#212121]/80 text-white 
-                        cursor-pointer shadow-md h-12"
-                  >
+                    className="w-[48%]  px-[25px] py-[35px]  gap-x-3 relative group rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px]  text-white cursor-pointer shadow-md " >
                     <div className="HomePageButtonsCover-1"></div>
                     <IoExtensionPuzzleSharp className="h-6 w-6 z-10"></IoExtensionPuzzleSharp>
                     <p className="z-10">New Game</p>
@@ -288,7 +286,7 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
                   <div
                     id="HP-Quickplay"
                     onClick={() => Quickplay()}
-                    className="w-full relative py-3 gap-x-2 rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[18px] shadow-[#212121]/80 text-white cursor-pointer shadow-md h-12"
+                    className="w-[48%]  px-[25px] py-[35px] gap-x-3 relative group rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px]  text-white cursor-pointer shadow-md "
                   >
                     <div className="HomePageButtonsCover-2"></div>
                     <SiStackblitz className="h-6 w-6 z-10"></SiStackblitz>
@@ -297,7 +295,7 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
                   <div
                     id="HP-Settings"
                     onClick={() => router.push("/account/board_settings")}
-                    className="w-full relative py-3 gap-x-3 rounded-lg bg-[#1c683f]  flex justify-center items-center font-medium text-[18px] shadow-[#212121]/80 text-white cursor-pointer shadow-md h-12"
+                    className="w-[48%]  px-[25px] py-[35px] gap-x-3 relative group rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[16px] border-[2px] rounded-[5px]  text-white cursor-pointer shadow-md "
                   >
                     <div className="HomePageButtonsCover-3"></div>
                     <IoSettings className="h-6 w-6 z-10"></IoSettings>
@@ -306,7 +304,7 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
                   <div
                     id="HP-Chat"
                     onClick={() => router.push("/chat")}
-                    className="w-full relative py-3 gap-x-3 rounded-lg bg-[#1c683f]  flex  justify-center items-center font-medium text-[18px] shadow-[#212121]/80 text-white cursor-pointer shadow-md h-12"
+                    className="w-[48%]  px-[25px] py-[35px] gap-x-3 relative group rounded-lg bg-[#1c683f] flex justify-center items-center font-medium text-[16px] border-[2px]  rounded-[5px]  text-white cursor-pointer shadow-md "
                   >
                     <div className="HomePageButtonsCover-4"></div>
                     <MdHelp className="h-6 w-6 z-10"></MdHelp>
@@ -317,42 +315,51 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
             </div>
           </div>
         </div>
-
-        <div className="w-full flex justify-center px-4 pt-10">
-          <div className="w-full text-xl md:text-2xl font-semibold text-center">
-            Your Stats
-          </div>
-        </div>
-        <div className="w-full flex justify-center px-4">
-          <div className="p-4 w-full max-w-[1000px] bg-white shadow-[#12442947] shadow-lg rounded-md">
-            <div className="w-full flex flex-wrap gap-3 pt-4">
-              <div className="flex-1 relative py-3 rounded-md bg-gray-200 border-[2px] box-border border-[#124429] text-[#124429] min-w-[220px] flex items-center justify-center font-medium text-[18px] cursor-pointer">
-                <FaChessPawn className="h-6 w-6 mr-2" />
-                <p>Won: {gameNumbers.won}</p>
-              </div>
-              <div className="flex-1 relative py-3 rounded-md bg-gray-200 border-[2px] box-border border-[#124429] text-[#124429] min-w-[220px] flex items-center justify-center font-medium text-[18px] shadow-[#212121]/80 cursor-pointer">
-                <FaHandshake className="h-6 w-6 mr-2" />
-                <p>Draw: {gameNumbers.draw}</p>
-              </div>
-              <div className="flex-1 relative py-3 rounded-md bg-gray-200 border-[2px] box-border border-[#124429] text-[#124429] min-w-[220px] flex items-center justify-center font-medium text-[18px] shadow-[#212121]/80 cursor-pointer">
-                <FaHourglassHalf className="h-6 w-6 mr-2" />
-                <p>In Progress: {gameNumbers.inProgress}</p>
-              </div>
+        <div className="w-full px-4 flex justify-center mt-3">
+          <div className="flex flex-wrap justify-center w-full max-w-[1200px] gap-4">
+            <div className="flex w-full justify-center gap-4 ">
+              <section className="flex-1  wide-ft rounded-[5px] border border-stroke bg-white p-7 shadow-default">
+                  <div className="w-full flex justify-center px-4 pb-10">
+                    <div className="w-full text-xl md:text-2xl font-semibold text-center">
+                      Your Stats
+                    </div>
+                  </div>
+                  <div className="w-full flex justify-center">
+                    <div className=" w-full max-w-[1200px] ">
+                      <div className="w-full flex flex-wrap gap-3">
+                        <div className="flex-1 relative py-3   flex items-center justify-center  cursor-pointer font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-[35px]  font-medium text-black">
+                          <FaChessPawn className="h-6 w-6 mr-2" />
+                          <p>Won: {gameNumbers.won}</p>
+                        </div>
+                        <div className="flex-1 relative py-3  flex items-center justify-center cursor-pointer font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-[35px]  font-medium text-black">
+                          <FaHandshake className="h-6 w-6 mr-2" />
+                          <p>Draw: {gameNumbers.draw}</p>
+                        </div>
+                        <div className="flex-1 relative py-3  flex items-center justify-center  cursor-pointer font-medium text-[16px] border-[2px]  rounded-[5px] bg-[#F3F5F8] px-7 py-[35px] font-medium text-black">
+                          <FaHourglassHalf className="h-6 w-6 mr-2" />
+                          <p>In Progress: {gameNumbers.inProgress}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </section>
+              <section className="flex-1 row-gap-4 wide-st rounded-[5px] border border-stroke bg-white p-7 shadow-default">
+                <div className="w-full flex justify-center pb-4 pb-10">
+                  <div className="w-full text-xl md:text-2xl font-semibold text-center">
+                    Rating Progression
+                  </div>
+                </div>
+                <div className="w-full flex justify-center">
+                  <div className="w-full max-w-[1200px] flex flex-col md:flex-row justify-center items-center  ">
+                    <div className="md:w-2/3"><RatingChart data={chartPlot}></RatingChart></div>
+                    <div className="md:w-1/3"><PieChart gameNumbers={gameNumbers}></PieChart></div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </div>
-
-        <div className="w-full flex justify-center px-4 pt-10">
-          <div className="w-full text-xl md:text-2xl font-semibold text-center">
-            Rating Progression
-          </div>
-        </div>
-        <div className="w-full flex justify-center px-4">
-          <div className="p-4 w-full max-w-[1000px] bg-white shadow-[#12442947] shadow-lg rounded-md flex flex-col md:flex-row justify-center items-center">
-             <div className="md:w-2/3"><RatingChart data={chartPlot}></RatingChart></div>
-             <div className="md:w-1/3"><PieChart gameNumbers={gameNumbers}></PieChart></div>
-          </div>
-        </div>
+        
 
         <div className="w-full flex justify-center px-4 pt-10">
           <div className="w-full text-center text-xl md:text-2xl font-semibold">
@@ -360,7 +367,7 @@ export default function HomeClient({ lout, user, gameNumbers, gamesArray, chartP
           </div>
         </div>
         <div className="w-full flex justify-center px-4">
-          <section className="w-full rounded-md flex justify-center flex-col p-4 max-w-[1000px] bg-white shadow-[#12442947] shadow-lg gap-y-3">
+          <section className="w-full rounded-md flex justify-center flex-col max-w-[1200px]  rounded-[5px] border border-stroke bg-white p-7 shadow-default">
             {gamesList ? (
               <section className="mx-auto w-full flex flex-col gap-y-3">
                 {gamesList.map((game: any, idx: number) => (

@@ -30,7 +30,7 @@ const Accordion = ({ question, answer, turn, setTurn, idx }: Props) => {
   return (
       <div className='flex flex-col items-center justify-center w-full px-2 text-lg pt-4 lg:text-base'>
           <button onClick={toggleAccordion}
-              className={`bg-transparent px-5 bg-white shadow cursor-pointer w-full h-full ${turn![idx]} hover:bg-[#124429] hover:text-white transition-colors duration-200`}>
+              className={`rounded-[5px] bg-[#F3F5F8] px-7  font-medium text-black  cursor-pointer w-full h-full ${turn![idx]}  transition-colors duration-200`}>
               <div className='py-3'>
                   <div className='flex items-center justify-between h-14 text-left'>
                       <span className='ml-2 font-medium lg:font-semibold lg:text-xl text-sm'>{question}</span>

@@ -656,7 +656,7 @@ export default function UserInputPage({session, userProfile}:any) {
           <div
             className={`w-full ${
               isMediumScr ? "h-screen" : ""
-            } min-h-[60vh] md:w-1/2 md:h-screen flex flex-col px-4 pt-2 pb-8 md:px-0 md:py-2 bg-[#FCFCFC] justify-center`}
+            } min-h-[60vh] md:w-1/2 md:h-screen flex flex-col px-4 pt-2 pb-8 md:px-0 md:py-2  bg-gray-100 justify-center`}
           >
             <div className="h-full w-full items-center justify-center flex flex-col">
               {!chessComUsername && step == 0 ? (
@@ -692,13 +692,13 @@ export default function UserInputPage({session, userProfile}:any) {
                   // ></SubscriptionCodeInput>
                   // </div>
                   */}
-                  <div className="flex gap-[15px] justify-end mt-8">
+                  <div className="flex gap-[15px] justify-end mt-8  ">
                     <div>
                       <button
                         onClick={() => {
                           createChessNameAndAssistant();
                         }}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#124429] text-white hover:bg-[#f5f7f9] hover:text-[#124429] border border-[#124429] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#000] text-white hover:bg-[#f5f7f9] hover:text-[#124429] border border-[#124429] no-underline active:scale-95 w-[140px] "
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -739,16 +739,16 @@ export default function UserInputPage({session, userProfile}:any) {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-xl mx-auto px-4"
+                  className="max-w-[700px] mx-auto px-4"
                 >
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1E2B3A]">
                       1. Select a personality for Chessy
                   </h2>
-                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
+                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mt-4 mb-5">
                     Choose whoever makes you feel comfortable. You can always
                     switch to another one!
                   </p>
-                  <div>
+                  <div className='rounded-[5px] border border-stroke bg-white p-7 shadow-default'>
                     <RadioGroup
                       value={chessyPersonality}
                       onChange={setChessyPersonality}
@@ -767,9 +767,9 @@ export default function UserInputPage({session, userProfile}:any) {
                                   ? "border-transparent"
                                   : "border-gray-300",
                                 active
-                                  ? "border-[#124429] ring-2 ring-[#DFF6EA]"
+                                  ? "border-[#000] "
                                   : "",
-                                "relative cursor-pointer rounded-lg border bg-white px-6 py-2 shadow-sm focus:outline-none flex justify-between"
+                                "relative cursor-pointer  border  rounded-[5px] bg-[#F3F5F8] px-6 py-2  focus:outline-none flex justify-between"
                               )
                             }
                           >
@@ -779,7 +779,7 @@ export default function UserInputPage({session, userProfile}:any) {
                                   <span className="flex flex-col text-sm">
                                     <RadioGroup.Label
                                       as="span"
-                                      className="font-medium text-gray-900"
+                                      className="font-semibold text-gray-900"
                                     >
                                       {style.name}
                                     </RadioGroup.Label>
@@ -798,21 +798,21 @@ export default function UserInputPage({session, userProfile}:any) {
                                     <img
                                       src="/chessy/Chessvia-Favicon-Gold.png"
                                       alt="Gold Favicon"
-                                      className="w-[48px] h-auto"
+                                      className="w-[48px] h-[48px] border bg-white rounded-full ml-[10px]"
                                     />
                                   )}
                                   {index === 1 && (
                                     <img
                                       src="/chessy/Chessvia-Favicon-Green.png"
                                       alt="Green Favicon"
-                                      className="w-[48px] h-auto"
+                                      className="w-[48px] h-[48px] border bg-white rounded-full ml-[10px]"
                                     />
                                   )}
                                   {index === 2 && (
                                     <img
                                       src="/chessy/Chessvia-Favicon-Silver.png"
                                       alt="Silver Favicon"
-                                      className="w-[48px] h-auto"
+                                      className="w-[48px] h-[48px] border bg-white rounded-full ml-[10px]"
                                     />
                                   )}
                                 </span>
@@ -820,7 +820,7 @@ export default function UserInputPage({session, userProfile}:any) {
                                   className={classNames(
                                     active ? "border" : "border-[1.5px]",
                                     checked
-                                      ? "border-[#124429]"
+                                      ? "border-[#000]"
                                       : "border-transparent",
                                     "pointer-events-none absolute -inset-px rounded-lg"
                                   )}
@@ -834,10 +834,10 @@ export default function UserInputPage({session, userProfile}:any) {
                     </RadioGroup>
                   </div>
                   <div className="flex gap-[15px] justify-end mt-8">
-                    <div>
+                    <div >
                       <Link
                         href="/"
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold flex items-center justify-center bg-[#f5f7f9] text-[#124429] no-underline active:scale-95 border-[1px] border-[#124429] transition-all duration-100 hover:bg-[#124429] hover:text-white w-[120px] min-w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold flex items-center justify-center bg-[#f5f7f9] text-[#124429] no-underline active:scale-95 border-[1px] border-[#124429] transition-all duration-100 hover:bg-[#124429] hover:text-white w-[140px] min-w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                           transition:
@@ -852,7 +852,7 @@ export default function UserInputPage({session, userProfile}:any) {
                         onClick={() => {
                           setStep(2);
                         }}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#124429] text-white border border-[#124429] hover:bg-white hover:text-[#124429] no-underline flex gap-x-2 active:scale-95 w-[120px] min-w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#000] text-white border border-[#124429] hover:bg-white hover:text-[#124429] no-underline flex gap-x-2 active:scale-95 w-[120px] min-w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -892,16 +892,16 @@ export default function UserInputPage({session, userProfile}:any) {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-xl mx-auto px-4"
+                  className="max-w-[700px] mx-auto px-4"
                 >
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1E2B3A]">
                                           2. Select a difficulty for Chessy
                   </h2>
-                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
+                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mt-4 mb-5">
                     This difficulty will be relative to your online Chess
                     rating. Choose a difficulty to continue.
                   </p>
-                  <div>
+                  <div className='rounded-[5px] border border-stroke bg-white p-7 shadow-default'>
                     <RadioGroup
                       value={difficultyLevel}
                       onChange={setDifficultyLevel}
@@ -920,9 +920,9 @@ export default function UserInputPage({session, userProfile}:any) {
                                   ? "border-transparent"
                                   : "border-gray-300",
                                 active
-                                  ? "border-[#124429] ring-2 ring-[#DFF6EA]"
+                                  ? "border-[#000]"
                                   : "",
-                                "relative cursor-pointer rounded-lg border bg-white px-6 py-2 shadow-sm focus:outline-none flex justify-between"
+                                "relative cursor-pointer border  rounded-[5px] bg-[#F3F5F8] px-6 py-2  focus:outline-none flex justify-between"
                               )
                             }
                           >
@@ -1202,7 +1202,7 @@ export default function UserInputPage({session, userProfile}:any) {
                                   className={classNames(
                                     active ? "border" : "border-[1.5px]",
                                     checked
-                                      ? "border-[#124429]"
+                                      ? "border-[#000]"
                                       : "border-transparent",
                                     "pointer-events-none absolute -inset-px rounded-lg"
                                   )}
@@ -1219,7 +1219,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(1)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#124429] no-underline active:scale-95 w-[120px] min-w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#124429] no-underline active:scale-95  min-w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1230,7 +1230,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(3)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#124429] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px] min-w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#000] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px] min-w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1268,15 +1268,15 @@ export default function UserInputPage({session, userProfile}:any) {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-lg mx-auto px-4"
+                  className="max-w-[700px] mx-auto px-4"
                 >
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1E2B3A]">
                     3. Select your level of help
                   </h2>
-                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
+                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mt-4 mb-5">
                     This will influence how helpful Chessy&apos;s replies are. Don&apos;t worry, you can always nicely ask him to be more helpful.
                   </p>
-                  <div>
+                  <div className='rounded-[5px] border border-stroke bg-white p-7 shadow-default'>
                     <RadioGroup value={helpLevel} onChange={setHelpLevel}>
                       <RadioGroup.Label className="sr-only">
                         Server size
@@ -1292,9 +1292,9 @@ export default function UserInputPage({session, userProfile}:any) {
                                   ? "border-transparent"
                                   : "border-gray-300",
                                 active
-                                  ? "border-[#124429] ring-2 ring-[#DFF6EA]"
+                                  ? "border-[#000]"
                                   : "",
-                                "relative cursor-pointer rounded-lg border bg-white px-6 py-2 shadow-sm focus:outline-none flex justify-between"
+                                "relative cursor-pointer  border  rounded-[5px] bg-[#F3F5F8] px-6 py-2  focus:outline-none flex justify-between"
                               )
                             }
                           >
@@ -1426,7 +1426,7 @@ export default function UserInputPage({session, userProfile}:any) {
                                   className={classNames(
                                     active ? "border" : "border-[1.5px]",
                                     checked
-                                      ? "border-[#124429]"
+                                      ? "border-[#000]"
                                       : "border-transparent",
                                     "pointer-events-none absolute -inset-px rounded-lg"
                                   )}
@@ -1443,7 +1443,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(2)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95 "
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1454,7 +1454,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(4)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#124429] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#000] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1494,15 +1494,15 @@ export default function UserInputPage({session, userProfile}:any) {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-lg mx-auto px-4"
+                  className="max-w-[700px] mx-auto px-4"
                 >
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1E2B3A]">
                     4. Select white or black
                   </h2>
-                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
+                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mt-4 mb-5">
                     Do you want to be on the offensive or the defense? You can always switch in your next game.
                   </p>
-                  <div>
+                  <div className='rounded-[5px] border border-stroke bg-white p-7 shadow-default'>
                     <RadioGroup value={userColor} onChange={setUserColor}>
                       <RadioGroup.Label className="sr-only">
                         Server size
@@ -1518,9 +1518,9 @@ export default function UserInputPage({session, userProfile}:any) {
                                   ? "border-transparent"
                                   : "border-gray-300",
                                 active
-                                  ? "border-[#124429] ring-2 ring-[#DFF6EA]"
+                                  ? "border-[#000]"
                                   : "",
-                                "relative cursor-pointer rounded-lg border bg-white px-6 py-[6px] shadow-sm focus:outline-none flex justify-between"
+                                "relative cursor-pointer border  rounded-[5px] bg-[#F3F5F8]  px-6 py-[6px]  focus:outline-none flex justify-between"
                               )
                             }
                           >
@@ -1573,7 +1573,7 @@ export default function UserInputPage({session, userProfile}:any) {
                                   className={classNames(
                                     active ? "border" : "border-[1.5px]",
                                     checked
-                                      ? "border-[#124429]"
+                                      ? "border-[#000]"
                                       : "border-transparent",
                                     "pointer-events-none absolute -inset-px rounded-lg"
                                   )}
@@ -1590,7 +1590,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(3)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1601,7 +1601,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(5)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#124429] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#000] text-white hover:bg-[#f5f7f9] hover:text-[#1E2B3A] border border-[#124429] no-underline active:scale-95 w-[120px]"
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1641,7 +1641,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-lg mx-auto px-4"
+                  className="max-w-[700px] mx-auto px-4"
                 >
                   {customPositionDisplayActive && (
                     <div className="fixed top-0 right-0 left-0 bottom-0 z-50 bg-[#89a6a620] flex justify-center items-center">
@@ -1659,11 +1659,11 @@ export default function UserInputPage({session, userProfile}:any) {
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1E2B3A]">
                     5. Select an opening position
                   </h2>
-                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
+                  <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mt-4 mb-5">
                     Here you can choose one of the offered opening positions.
                     Choose a position or Regular Start to jump into the game!
                   </p>
-                  <div className="relative">
+                  <div className="relative ">
                     <div
                       onClick={() =>
                         setOpeningDropDownActive((prevDD) => !prevDD)
@@ -1705,23 +1705,23 @@ export default function UserInputPage({session, userProfile}:any) {
                       </div>
                     </div>
                     {openingDropDownActive && (
-                      <div className="absolute w-full bg-gray-200 space-y-2 max-h-[240px] overflow-y-auto">
+                      <div className="absolute w-full bg-white space-y-2 max-h-[240px] overflow-y-auto shadow-sm rounded-lg">
                         <div
                           onClick={() => handleSelectOpening(0)}
-                          className="px-6 cursor-pointer hover:bg-blue-100 py-4 flex justify-between items-center"
+                          className="px-6 cursor-pointer hover:bg-black hover:text-white py-4 flex justify-between items-center"
                         >
                           <p>Regular start</p>
                         </div>
                         <div
                           onClick={() => handleCustomPosition()}
-                          className="px-6 cursor-pointer hover:bg-blue-100 py-4 flex justify-between items-center"
+                          className="px-6 cursor-pointer hover:bg-black hover:text-white py-4 flex justify-between items-center"
                         >
                           <p>Custom positions</p>
                         </div>
                         {openings.map((opening: any, idx: number) => (
                           <div
                             onClick={() => handleSelectOpening(idx + 1)}
-                            className="px-6 cursor-pointer hover:bg-blue-100 py-4 flex justify-between items-center"
+                            className="px-6 cursor-pointer hover:bg-black hover:text-white py-4 flex justify-between items-center"
                             key={idx}
                           >
                             <p>{opening.name}</p>
@@ -1741,7 +1741,7 @@ export default function UserInputPage({session, userProfile}:any) {
                     <div>
                       <button
                         onClick={() => setStep(4)}
-                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95 w-[120px]"
+                        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A] hover:bg-[#124429] hover:text-white border border-[#1E2B3A] no-underline active:scale-95 "
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}
@@ -1758,9 +1758,9 @@ export default function UserInputPage({session, userProfile}:any) {
                         }}
                         className={`group rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 flex items-center justify-center ${
                           chessComUsername
-                            ? "bg-[#124429] hover:bg-[#f5f7f9] hover:text-[#1E2B3A]"
+                            ? "bg-[#000] hover:bg-[#f5f7f9] hover:text-[#1E2B3A]"
                             : "bg-gray-400 cursor-not-allowed"
-                        } text-white border border-[#124429] no-underline active:scale-95 w-[120px]`}
+                        } text-white border border-[#124429] no-underline active:scale-95`}
                         style={{
                           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                         }}

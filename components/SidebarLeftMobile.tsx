@@ -93,7 +93,7 @@ export default function ChessboardSidebarLeft({ lout, isMobileView = false }:any
   const [isColapsed, setIsColapsed] = useState(false);
 
   return (
-    <div id="sidebarMenuMain" className={`flex max-h-screen h-full left-0 flex-col z-[80] ${isColapsed ? '': 'w-[16rem]'} transition duration-300 relative px-5 bg-white shadow-md shadow-black/40`}>
+    <div id="sidebarMenuMain" className={`flex max-h-screen h-full left-0 flex-col z-[80] ${isColapsed ? '': 'w-[16rem]'} transition duration-300 relative rounded-r-xl p-5 bg-white `}>
       
         
           <div className="relative inline-flex justify-center w-full">
@@ -105,7 +105,7 @@ export default function ChessboardSidebarLeft({ lout, isMobileView = false }:any
                alt="Chessvia Logo"
              />
              : <motion.img
-                className={`  w-[200px] row-start-1 mb-0 mt-5 duration-300`}
+                className={`  w-[150px] row-start-1 mb-0 mt-5 duration-300`}
                 src="/chessvia.png"
                 alt="Chessvia Logo"
               />}
@@ -126,12 +126,12 @@ export default function ChessboardSidebarLeft({ lout, isMobileView = false }:any
                 {menu.submenu ? (
                   <div>
                     <li
-                      className={`text-black text-lg flex items-center gap-x-4 p-2 mx-[1px] ${
+                      className={`text-black text-lg flex items-center gap-x-3 p-2 mx-[1px] ${
                         index === 0 ? "mt-2" : "mt-[20px]" // Adjusts the margin-top for the first item
                       } cursor-pointer ${
                         router === menu.path
-                          ? "bg-gray-200"
-                          : "hover:bg-gray-200"
+                          ? " bg-[#F3F5F8]"
+                          : "hover:bg-[#F3F5F8]"
                       } rounded-md duration-300 text-center`}
                     >
                       <span className={`text-2xl block float-left`}>
@@ -155,12 +155,12 @@ export default function ChessboardSidebarLeft({ lout, isMobileView = false }:any
                 ) : (
                   <Link href={menu.path}>
                     <li
-                      className={`text-black text-lg flex items-center gap-x-4 p-2 mx-[1px] ${
+                      className={`text-black text-lg flex items-center gap-x-3 p-2 mx-[1px] ${
                         index === 0 ? "mt-2" : "mt-[20px]" // Adjusts the margin-top for the first item
                       } cursor-pointer ${
                         router === menu.path
-                          ? "bg-gray-200"
-                          : "hover:bg-gray-200"
+                          ? "bg-[#F3F5F8]"
+                          : "hover:bg-[#F3F5F8]"
                       } rounded-md duration-300 text-center
                       ${isColapsed ? 'justify-center' : ''}`}
                     >

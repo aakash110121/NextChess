@@ -33,11 +33,11 @@ const HistoryItem: React.FC<ItemProps> = (
     return (
       <div
         className="rounded-sm p-1 flex
-        bg-gray-100 shadow-[#124429]/30 shadow-md"
+        cursor-pointer font-medium text-[16px]  rounded-[5px] bg-[#F3F5F8] px-2 py-2  font-medium text-black"
       >
         <div
           onClick={() => handleLoadGame(gameId)}
-          className="h-[100px] relative cursor-pointer w-[100px]"
+          className="h-[120px] relative cursor-pointer w-[100px]"
         >
           <Chessboard
             id="board"
@@ -54,19 +54,19 @@ const HistoryItem: React.FC<ItemProps> = (
           />
           <div className="absolute top-0 w-full h-full z-20 cursor-pointer"></div>
         </div>
-        <section className="w-full text-gray-800 grid grid-rows-5 px-2 h-[100px]">
+        <section className="w-full text-gray-800 grid grid-rows-2 px-4 ">
           <div className="row-span-1 gap-x-4 flex flex-wrap">
             <span className="font-semibold">Level: {difficultyLevel}</span>
           </div>
           <div className="row-span-1 gap-x-4 flex flex-wrap">
             <span className="font-semibold">Personality: {chessyPersonality}</span>
           </div>
-          <div className="row-span-1 flex flex-col justify-center items-center  ">
+          <div className="row-span-1 flex flex-col">
             <span className="text-[15px] font-medium align-bottom">
               {chessName} vs. Chessy
             </span>
           </div>
-          <div className="row-span-1 gap-x-4 flex flex-wrap justify-center items-center align-top">
+          <div className="row-span-1 gap-x-4 flex flex-wrap  items-center align-top">
            {isCompleted ? (
               <span
                 className={`${
