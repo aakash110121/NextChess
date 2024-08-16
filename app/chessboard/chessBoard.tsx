@@ -1058,6 +1058,10 @@ const ChessboardClient = ({ gameId, game, user, subscription, settings, lout}:an
       }
     }
 
+    // Skip storing guest user game data 
+    setIsGameCompleted(true);
+    return;
+
     try {
      await setDoc(
          userCurrentGameRef,
@@ -1523,6 +1527,7 @@ const ChessboardClient = ({ gameId, game, user, subscription, settings, lout}:an
           hintArrow={hintArrow}
           hintSquare={hintSquare}
           hint={hint}
+          hintsLeft={hintsLeft}
           isRunResolved={isRunResolved}
           gameId={gameId}
           createMessage={createMessage}

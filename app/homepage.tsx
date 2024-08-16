@@ -6,10 +6,8 @@ export const dynamic = "force-dynamic";
 
 const game = {
   "chessyPersonality": "Grandmaster Chessy",
-  "hintsLeft": 0,
-  "fenArray": [
-    "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
-  ],
+  "hintsLeft": 10,
+  "fenArray": [],
   "helpLevel": "Only a little bit of support",
   "stockfishAnalysis": [],
   "difficultyLevel": "Same level as me",

@@ -60,6 +60,7 @@ interface GameProps {
   hintArrow: Arrow | null,
   hintSquare: Square | null,
   hint: () => Promise<void>,
+  hintsLeft: number,
   isRunResolved: boolean,
   createMessage: (transcript: string, threadId: string) => Promise<void>,
   gameId: string,
@@ -99,6 +100,7 @@ const Board: React.FC<GameProps> = ({
   hintArrow,
   hintSquare,
   hint,
+  hintsLeft,
   isRunResolved,
   gameId,
   createMessage,
@@ -386,7 +388,7 @@ const Board: React.FC<GameProps> = ({
   }
 
   const [evalTypologyExpanded, setEvalTypologyExpanded] = useState(true);
-  const [moveEvalVisible, setMoveEvalVisible] = useState(false);
+  const [moveEvalVisible, setMoveEvalVisible] = useState(true);
   
   return (
     <div className="lg:flex pb-10 lg:pb-0 px-2 m-auto chess-baord">
@@ -462,40 +464,13 @@ const Board: React.FC<GameProps> = ({
                       </span>
                     </div>
                   )}
-                  <div className="w-full grid grid-rows-4 sm:grid-rows-2 sm:grid-flow-col gap-2 px-2">
-                    <button
-                      disabled={inProcess}
-                      onClick={() => {
-                        setInProcess(true);
-                        r.push("/form");
-                      }}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
-                    >
-                      New Game
-                    </button>
-                    <button
-                      disabled={inProcess}
-                      onClick={() => {console.log("...")}}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
-                    >
-                      Review Game
-                    </button>
+                  <div className="w-full px-2">
                     <button
                       disabled={inProcess}
                       onClick={() => handleQuickPlay()}
                       className="w-full  rounded-lg   text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
                     >
-                      Quickplay
-                    </button>
-                    <button
-                      disabled={inProcess}
-                      onClick={() => {
-                        setInProcess(true);
-                        r.push("/home");
-                      }}
-                      className="w-full  rounded-lg  text-white transition duration-200 bg-[#124429] hover:bg-[#16281e] font-semibold text-[20px] py-4 mx-auto"
-                    >
-                      Home
+                      New Game
                     </button>
                   </div>
                 </div>
@@ -634,8 +609,6 @@ const Board: React.FC<GameProps> = ({
               )}
             </div>
           </div>
-          <p>currentPositionIndex: {currentPositionIndex}</p>
-          <p>movesArray.length: {movesArray.length}</p>
           <div className={`lg:h-[${boardWidth}px] flex flex-col `}>
                {/* Moved section */}
                <section className="flex items-center justify-between w-full bg-transparent p-1 lg:w-[500px] lg:ml-[10px] mb-0 mt-6">
@@ -671,8 +644,8 @@ const Board: React.FC<GameProps> = ({
         {/* Chat container */}
         <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
 
-              {isGameCompleted ? <div className="h-[40px] space-x-2 pt-2 relative w-full bg-[#EEEEEE]">
-                  <div className={`absolute w-full ${evalTypologyExpanded ? "h-[200px]" : "h-[40px]"} bottom-0 bg-[#EEEEEE]`}>
+              {isGameCompleted ? <div className="space-x-2 pt-2 mt-[30px] relative w-full bg-[#EEEEEE]">
+                  <div className={`w-full ${evalTypologyExpanded ? "h-[200px]" : "h-[40px]"} bottom-0 bg-[#EEEEEE]`}>
                     <div onClick={()=>setEvalTypologyExpanded(prevExpanded=>!prevExpanded)} className={`w-[60px] h-[30px] cursor-pointer absolute rounded-t-[20px] -top-[30px] bg-[#EEEEEE] flex items-center justify-center`}>
                       {evalTypologyExpanded ? <IoIosArrowDown className=""/> : <IoIosArrowUp />}
                     </div>
@@ -725,20 +698,25 @@ const Board: React.FC<GameProps> = ({
               <section className="flex  space-x-2 pt-2 relative">
                 <button className="relative w-1/2 bg-[#124429] text-white rounded-sm border-[1px] border-white/30">
                   <div className="flex justify-between w-full items-center h-full">
-                    <div
-                      onClick={() => hint()}
-                      className="p-2 sm:p-3 grow text-start tracking-wide text-sm sm:text-sm"
-                    >
-                      <p className="text-xs sm:text-sm">Hint: {hintOption == 1 ? "Piece" : "Arrow"}</p>
-                    </div>
-                    <div
-                      className="pr-2 sm:pr-3  h-full flex items-center justify-center rounded-r-sm"
-                      onClick={() => setHintDD((prevHintDD) => !prevHintDD)}
-                    >
-                      <MdArrowForwardIos
-                        className={`w-3 h-3 sm:w-4 sm:h-4 ${hintDD ? "rotate-90" : ""} transition duration-200`}
-                      />
-                    </div>
+                    {hintsLeft > 0 ?
+                      (<><div
+                        onClick={() => hint()}
+                        className="p-2 sm:p-3 grow text-start tracking-wide text-sm sm:text-sm"
+                      >
+                        <p className="text-xs sm:text-sm">Hint({hintsLeft}): {hintOption == 1 ? "Piece" : "Arrow"}</p>
+                      </div>
+                      <div
+                        className="pr-2 sm:pr-3  h-full flex items-center justify-center rounded-r-sm"
+                        onClick={() => setHintDD((prevHintDD) => !prevHintDD)}
+                      >
+                        <MdArrowForwardIos
+                          className={`w-3 h-3 sm:w-4 sm:h-4 ${hintDD ? "rotate-90" : ""} transition duration-200`}
+                        />
+                      </div></>) :
+                      (<div
+                        className="p-2 sm:p-3 grow text-start tracking-wide text-sm sm:text-sm"
+                      ><p className="text-xs sm:text-sm">Hints({hintsLeft})</p></div>)
+                    }
                   </div>
                   {hintDD && (
                     <ul className="absolute w-full flex flex-col items-start gap-y-1 bg-green-800 p-2 rounded-sm text-start z-30 top-9 before:absolute before:content-[''] before:w-3 before:h-3 before:bg-green-800 before:rotate-45 before:right-1 before:-top-[3px]">
@@ -821,26 +799,6 @@ const Board: React.FC<GameProps> = ({
                             className="relative w-9 h-5 bg-gray-200 
                         peer-focus:outline-none 
                           rounded-full 
-                         peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
-                          peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white
-                           after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all  peer-checked:bg-[#124429]"
-                          ></div>
-                        </label>
-                      </li>
-                      <li className="flex justify-between items-center w-full ">
-                        <p>Chessy Speaks</p>
-                        <label className="inline-flex items-center cursor-pointer">
-                          <input
-                            type="checkbox"
-                            value=""
-                            className="sr-only peer"
-                            checked={chessyVoiceSound == "on"} // Connect the React state to the input
-                            onChange={() => handleChessyVoiceSound()} // Toggle the state on change
-                          />
-                          <div
-                            className="relative w-9 h-5 bg-gray-200 
-                        peer-focus:outline-none 
-                         rounded-full 
                          peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
                           peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white
                            after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all  peer-checked:bg-[#124429]"
