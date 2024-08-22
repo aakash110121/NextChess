@@ -1662,6 +1662,7 @@ const ChessboardClient2 = ({session, gameId, game, user, subscription, settings,
           hintArrow={hintArrow}
           hintSquare={hintSquare}
           hint={hint}
+          hintsLeft={hintsLeft}
           isRunResolved={isRunResolved}
           gameId={gameId}
           createMessage={createMessage}
