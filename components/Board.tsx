@@ -143,7 +143,7 @@ const Board: React.FC<GameProps> = ({
     query: '(max-width: 430px)'
   });
 
-  let boardWidth = 700;
+  let boardWidth = 600;
 
   if (isSmallMobile) {
     boardWidth = 350;
@@ -611,7 +611,7 @@ const Board: React.FC<GameProps> = ({
           </div>
           <div className={`lg:h-[${boardWidth}px] flex flex-col `}>
                {/* Moved section */}
-               <section className="flex items-center justify-between w-full bg-transparent p-1 lg:w-[500px] lg:ml-[10px] mb-0 mt-6">
+               <section className="flex items-center justify-between w-full bg-transparent p-1 lg:w-[400px] lg:ml-[10px] mb-0 mt-6">
               <div className="flex items-center space-x-2 relative">
                 <div className="h-12 w-12 rounded-full transform scale-x-[-1] bg-white p-3">
                   <Image
@@ -634,7 +634,7 @@ const Board: React.FC<GameProps> = ({
                     <div className="wave-bar"></div>
                     <div className="wave-bar"></div>
                   </div> :
-                    <div className="w-[220px] lg:w-[400px]"><p>{chessyComment}</p></div>}
+                    <div className="w-[220px] lg:w-[322px]"><p>{chessyComment}</p></div>}
                   {/* Added arrow */}
                   <div className="absolute w-2 h-3 bg-gray-200 rotate-45 -left-1.5 top-4"></div>
                 </div>
@@ -642,7 +642,7 @@ const Board: React.FC<GameProps> = ({
             </section>
 
         {/* Chat container */}
-        <div className="lg:ml-[10px] w-full p-1 lg:w-[500px] lg:flex lg:flex-col bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
+        <div className="lg:ml-[10px] w-full p-1 lg:w-[400px] lg:flex lg:flex-col bg-[#124429] mb-[4px] mt-1 lg:mt-3 rounded-[5px] p-7 shadow-default">
 
               {isGameCompleted ? <div className="space-x-2 pt-2 mt-[30px] relative w-full bg-[#EEEEEE]">
                   <div className={`w-full ${evalTypologyExpanded ? "h-[200px]" : "h-[40px]"} bottom-0 bg-[#EEEEEE]`}>
@@ -771,7 +771,7 @@ const Board: React.FC<GameProps> = ({
               {/*BUTTONS*/}
             </div>
             <div
-              className={`lg:ml-[10px] bg-black/80 border-[#212121] mt-5 w-full lg:w-[500px] flex flex-col justify-between rounded-[5px] border border-stroke p-7 shadow-default
+              className={`lg:ml-[10px] bg-black/80 border-[#212121] mt-5 w-full lg:w-[400px] flex flex-col justify-between rounded-[5px] border border-stroke p-7 shadow-default
              `}
             >
               <div className="w-full">
