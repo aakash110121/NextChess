@@ -238,7 +238,7 @@ export default function HomePage() {
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
                           <div className="cps50 ckyqm c21u3 czz36 ccipq">Card Inventory</div>
-                          <div className="cvshg cyb9k c2h4q">A user interface that allows players to view and manage their cards. The inventory should display each card's description and how many are left.</div>
+                          <div className="cvshg cyb9k c2h4q">A user interface that allows players to view and manage their cards. The inventory should display each card&#39;s description and how many are left.</div>
                         </div>											
                       </div>
                     )}
@@ -254,7 +254,7 @@ export default function HomePage() {
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
                           <div className="cps50 ckyqm c21u3 czz36 ccipq">Real-time Activation</div>
-                          <div className="cvshg cyb9k c2h4q">Cards can be activated at any point during the player's turn, allowing for real-time strategy adjustments.</div>
+                          <div className="cvshg cyb9k c2h4q">Cards can be activated at any point during the player&#39;s turn, allowing for real-time strategy adjustments.</div>
                         </div>											
                       </div>
                     )}
@@ -262,7 +262,7 @@ export default function HomePage() {
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
                           <div className="cps50 ckyqm c21u3 czz36 ccipq">Conditional Triggers</div>
-                          <div className="cvshg cyb9k c2h4q">Some cards could have conditions that must be met before they can be played (e.g., "Can only be used when your king is in check").</div>
+                          <div className="cvshg cyb9k c2h4q">Some cards could have conditions that must be met before they can be played (e.g., &#34;Can only be used when your king is in check&#34;).</div>
                         </div>											
                       </div>
                     )}
