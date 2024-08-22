@@ -13,7 +13,7 @@ interface ArticleProps {
   description: string;
 }
 
-export default async function Home() {
+export default async function Page() {
   let year = '2020';
 
   // Article Component
