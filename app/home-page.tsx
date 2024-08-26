@@ -283,7 +283,7 @@ export default function HomePage() {
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
                           <div className="cps50 ckyqm c21u3 czz36 ccipq">Play Anywhere, Anytime</div>
-                          <div className="cvshg cyb9k c2h4q">Enjoy a consistent chess experience across all devices. Whether you're using a desktop,
+                          <div className="cvshg cyb9k c2h4q">Enjoy a consistent chess experience across all devices. Whether you&#39;re using a desktop,
                           mobile, or tablet, your games are always at your fingertips.</div>
                         </div>											
                       </div>
