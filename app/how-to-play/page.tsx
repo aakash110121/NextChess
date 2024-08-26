@@ -43,7 +43,7 @@ export default async function Page() {
                   <div className="c7z56 c5ymx">
                     <a href="blog-post.html">
                       <h1 className="cps50 cyb9k c41dw">
-                        How to Play Chess on Squsts.com
+                        How to Play Chess on Our Platform
                       </h1>
                     </a>
                     <p className="text-gray-600 c0atf czz36">
@@ -66,7 +66,7 @@ export default async function Page() {
 
             <div className="clyfp cdxx5 cszww c5v0a c74as" data-aos-id-featposts="">
 
-              {/* 1st article */}
+            
               <article 
                 className="czjaw cl6gq ccqhl c4bes cof2i" 
                 data-aos="fade-up" 
@@ -84,22 +84,23 @@ export default async function Page() {
                   <div className="bg-teal-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
                 </figure>
                 <div className="text-white czjaw c54sb c1zcx cnc7y">
-                  <header className="c2h4q">
+                  <header className="">
                     <div className="csz0f">
                       <h3 className="cps50 cci6q cu5hn cwrry csrqa">
-                        The Board
+                      Create Your Account
                       </h3>
                     </div>
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      Chess is played on an 8x8 grid with 64 squares, alternating between light and dark colors.
+                   <p> Start by signing up with your email, or log in using your existing account.</p>
+                   <p> Customize your profile and set up your preferences.</p>
                     </div>
                   </footer>
                 </div>
               </article>
 
-              {/* 2nd article */}
+
               <article 
                 className="czjaw cl6gq ccqhl c4bes cof2i" 
                 data-aos="fade-up" 
@@ -117,22 +118,27 @@ export default async function Page() {
                   <div className="bg-purple-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
                 </figure>
                 <div className="text-white czjaw c54sb c1zcx cnc7y">
-                  <header className="c2h4q">
+                  <header className="">
                     <div className="csz0f">
                       <h3 className="cps50 cci6q cu5hn cwrry csrqa">
-                        The Pieces
+                      Find a Game
                       </h3>
                     </div>
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      Each player starts with 16 pieces—1 King, 1 Queen, 2 Rooks, 2 Bishops, 2 Knights, and 8 Pawns.
+                      <p><strong>Quick Match:</strong> Instantly find an opponent at your skill level using our real-time matchmaking
+                      system.</p>
+                      <p><strong>Custom Game:</strong> Set your preferred game parameters (time control, rating range, etc.) and
+                      invite a friend or challenge a random player.</p>
+                      <p><strong>Tournaments:</strong> Join ongoing tournaments for a chance to compete in a structured
+                      environment against players from all over the world.</p>
                     </div>
                   </footer>
                 </div>
               </article>
 
-              {/* 3rd article */}
+      
               <article 
                 className="czjaw cl6gq ccqhl c4bes cof2i" 
                 data-aos="fade-up" 
@@ -150,22 +156,26 @@ export default async function Page() {
                   <div className="bg-indigo-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
                 </figure>
                 <div className="text-white czjaw c54sb c1zcx cnc7y">
-                  <header className="c2h4q">
+                  <header className="">
                     <div className="csz0f">
                       <h3 className="cps50 cci6q cu5hn cwrry csrqa">
-                        Objective
+                      Learn and Improve
                       </h3>
                     </div>
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      The goal of the game is to checkmate your opponent&#39;s King, putting it in a position where it cannot escape capture.
+                    <p><strong>Interactive Lessons:</strong> Access our comprehensive library of tutorials, covering everything
+                    from basic rules to advanced strategies.</p>
+                    <p><strong>Puzzle Trainer:</strong> Sharpen your skills by solving chess puzzles of varying difficulty levels.</p>
+                    <p><strong>AI Game Analysis:</strong> After each match, review your game with our AI-powered analysis tool.
+                    Get insights, suggestions, and detailed feedback to improve your play.</p>
                     </div>
                   </footer>
                 </div>
               </article>
 
-              {/* 4th article */}
+          
               <article 
                 className="czjaw cl6gq ccqhl c4bes cof2i" 
                 data-aos="fade-up" 
@@ -183,20 +193,145 @@ export default async function Page() {
                   <div className="bg-pink-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
                 </figure>
                 <div className="text-white czjaw c54sb c1zcx cnc7y">
-                  <header className="c2h4q">
+                  <header className="">
                     <div className="csz0f">
                       <h3 className="cps50 cci6q cu5hn cwrry csrqa">
-                        Review Games
+                      During the Game
                       </h3>
                     </div>
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      Analyze your past games with our in-game analytics to see where you can improve.
+                    <p><strong>Make Your Moves:</strong> Play by clicking or dragging the pieces on the board. Your moves will be
+                    highlighted, and legal moves will be shown to help guide you.</p>
+                    <p><strong>Use Chat & Emojis:</strong> Communicate with your opponent using the chat feature or send
+                    friendly emojis during the game.</p>
+                    <p><strong>Pause & Resume:</strong> If you need a break, you can pause the game in casual matches and
+                    resume later without losing your progress.</p>
                     </div>
                   </footer>
                 </div>
               </article>
+
+
+
+
+
+
+
+              <article 
+                className="czjaw cl6gq ccqhl c4bes cof2i" 
+                data-aos="fade-up" 
+                data-aos-anchor="[data-aos-id-featposts]" 
+                data-aos-delay="100"
+              >
+                <figure>
+                  <Image
+                  className='cq9nz c9sso cez35 c3f8f ceo83 cgk3d cqlpw c2ysc c1zcx cs8sl'
+                  src={RelatedPost3}
+                  width={258}
+                  height={154}
+                  alt='Related post 03'
+                  />
+                  <div className="bg-teal-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
+                </figure>
+                <div className="text-white czjaw c54sb c1zcx cnc7y">
+                  <header className="">
+                    <div className="csz0f">
+                      <h3 className="cps50 cci6q cu5hn cwrry csrqa">
+                      Post-Game Options
+                      </h3>
+                    </div>
+                  </header>
+                  <footer>
+                    <div className="cvshg ceng1">
+                    <p><strong>Review Your Game:</strong> Immediately after the game, analyze your performance using the AI
+                    analysis or save the game to review later.</p>
+                    <p><strong>Rematch or New Opponent:</strong> Challenge your opponent to a rematch or return to the main
+                    menu to find a new game.</p>
+                    <p><strong>Share Your Game:</strong> Share your game with friends or post it on social media directly from the
+                    platform.</p>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+
+
+              <article 
+                className="czjaw cl6gq ccqhl c4bes cof2i" 
+                data-aos="fade-up" 
+                data-aos-anchor="[data-aos-id-featposts]" 
+                data-aos-delay="200"
+              >
+                <figure>
+                  <Image
+                  className='cq9nz c9sso cez35 c3f8f ceo83 cgk3d cqlpw c2ysc c1zcx cs8sl'
+                  src={RelatedPost4}
+                  width={258}
+                  height={154}
+                  alt='Related post 04'
+                  />
+                  <div className="bg-purple-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
+                </figure>
+                <div className="text-white czjaw c54sb c1zcx cnc7y">
+                  <header className="">
+                    <div className="csz0f">
+                      <h3 className="cps50 cci6q cu5hn cwrry csrqa">
+                      Explore More Features
+                      </h3>
+                    </div>
+                  </header>
+                  <footer>
+                    <div className="cvshg ceng1">
+                      <p><strong>Player Profiles:</strong> ITrack your progress, view your game history, and compare your stats with
+                      other players.</p>
+                      <p><strong>Opening Explorer:</strong> Study different chess openings and see how grandmasters played them.</p>
+                      <p><strong>Join Clubs:</strong> Become a member of chess clubs, participate in club events, and meet
+                      like-minded players.</p>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+
+      
+              <article 
+                className="czjaw cl6gq ccqhl c4bes cof2i" 
+                data-aos="fade-up" 
+                data-aos-anchor="[data-aos-id-featposts]" 
+                data-aos-delay="300"
+              >
+                <figure>
+                  <Image
+                  className='cq9nz c9sso cez35 c3f8f ceo83 cgk3d cqlpw c2ysc c1zcx cs8sl'
+                  src={RelatedPost5}
+                  width={258}
+                  height={154}
+                  alt='Related post 05'
+                  />
+                  <div className="bg-indigo-500 c7n3t cez35 cvdb7 ceo83 cgk3d cqlpw c2ysc" aria-hidden="true"></div>
+                </figure>
+                <div className="text-white czjaw c54sb c1zcx cnc7y">
+                  <header className="">
+                    <div className="csz0f">
+                      <h3 className="cps50 cci6q cu5hn cwrry csrqa">
+                      Stay Connected
+                      </h3>
+                    </div>
+                  </header>
+                  <footer>
+                    <div className="cvshg ceng1">
+                    <p><strong>Follow Top Players:</strong> AWatch live games from top-rated players and learn from their
+                    strategies.</p>
+                    <p><strong>Participate in Events:</strong> Check the events calendar regularly for upcoming tournaments and
+                    special events.</p>
+                  
+                    </div>
+                  </footer>
+                </div>
+              </article>
+
+          
+             
 
             </div>
 
@@ -213,13 +348,13 @@ export default async function Page() {
               {/* Main content */}
               <div className="c5okk" data-aos="fade-down" data-aos-delay="200">
 
-                {/* Section title */}
+               {/*
                 <h4 className="cps50 cy5hl cm36t">Card-Enhanced Gameplay</h4>
 
-                {/* Articles container */}
+               
                 <div className="clyfp cn6x8 c8eth ch9c5 crcpd c74as">
 
-                  {/* 1st article */}
+               
                   <article className="c54sb strng cnc7y">
                     <header>
                       <a className="csz0f" href="blog-post.html">
@@ -234,7 +369,7 @@ export default async function Page() {
                     </p>
                   </article>
 
-                  {/* 2nd article */}
+                 
                   <article className="c54sb strng cnc7y">
                     <header>
                       <a className="csz0f" href="blog-post.html">
@@ -249,7 +384,7 @@ export default async function Page() {
                     </p>
                   </article>
 
-                  {/* 3rd article */}
+                 
                   <article className="c54sb strng cnc7y">
                     <header>
                       <a className="csz0f" href="blog-post.html">
@@ -264,7 +399,7 @@ export default async function Page() {
                     </p>
                   </article>
 
-                  {/* 4th article */}
+             
                   <article className="c54sb strng cnc7y">
                     <header>
                       <a className="csz0f" href="blog-post.html">
@@ -279,7 +414,7 @@ export default async function Page() {
                     </p>
                   </article>
 
-                </div>
+                </div>*/}
 
                 {/* Call to Action Article */}
                 <div className="cszww c5v0a c74as mert">

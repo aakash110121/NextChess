@@ -14,26 +14,26 @@ export default function HomePage() {
       id: 1,
       imgSrc: Testimonial1,
       altText: 'Testimonial 01',
-      quote: '“ This is a great app and the value is amazing. Since I purchased it I have been using it everyday! Highly recommend it. “',
-      author: 'Andy Croll',
-      company: 'Appy.com',
+      quote: '“ This platform is a game-changer for chess enthusiasts like me. The AI analysis feature has drastically improved my understanding of the game. I can now pinpoint my mistakes and learn from them in real-time. The seamless experience across my phone and laptop makes it even better. Highly recommended for anyone serious about improving their chess skills! “',
+      author: 'Alex P.',
+      company: '',
       link: '#0',
     },
     {
       id: 2,
       imgSrc: Testimonial2,
       altText: 'Testimonial 02',
-      quote: '“ This is a great app and the value is amazing. Since I purchased it I have been using it everyday! Highly recommend it. “',
-      author: 'Patricia Lepisov',
-      company: 'Nobi Bank',
+      quote: '“ I&#39; ve tried a few online chess platforms, but this one stands out. The interactive lessons are top-notch, making it easy to grasp even the most complex trategies. The community here is also great—I&#39;ve met players from all over the world and even found a regular sparring partner. This is my go-to place for all things hess." ',
+      author: 'Sophia L.',
+      company: '',
       link: '#0',
     },
     {
       id: 3,
       imgSrc: Testimonial3,
       altText: 'Testimonial 03',
-      quote: '“ This is a great app and the value is amazing. Since I purchased it I have been using it everyday! Highly recommend it. “',
-      author: 'Zhenya Ritz',
+      quote: '“ As someone who enjoys a good challenge, the regular tournaments on this platform are fantastic. The matchmaking is spot-on, so I always get to play against someone at my level.The puzzle trainer is another feature I love—it keeps me sharp and ready for any game.Plus, I can customize my board and pieces, making the experience more personal. “',
+      author: 'Michael R.',
       company: 'Sync',
       link: '#0',
     },
@@ -41,8 +41,17 @@ export default function HomePage() {
       id: 4,
       imgSrc: Testimonial4,
       altText: 'Testimonial 04',
-      quote: '“ This is a great app and the value is amazing. Since I purchased it I have been using it everyday! Highly recommend it. “',
-      author: 'Lisa Champ',
+      quote: '“ I appreciate how this platform caters to both beginners and experienced players. The detailed player profiles help me track my progress and see where I stand compared to others. The cross-device sync is flawless—I can start a game on my tablet and finish it on my desktop without any issues. It’s a must-try for chess lovers. “',
+      author: 'Emma K.',
+      company: 'Appicu',
+      link: '#0',
+    },
+    {
+      id: 5,
+      imgSrc: Testimonial4,
+      altText: 'Testimonial 05',
+      quote: '“ Security is a big deal for me, and this platform doesn’t disappoint. The anti-cheating measures are robust, ensuring that every match is fair. I’ve been playing here for months,and I’ve never encountered any issues. The site also offers a great variety of features, from opening explorers to in-depth game analysis. It’s everything a chess player could ask for. “',
+      author: 'James T.',
       company: 'Appicu',
       link: '#0',
     },
@@ -79,10 +88,11 @@ export default function HomePage() {
               {/* Content */}
               <div className="cpo9b c2igy c7z56 c5ymx c4u1v cy5hl">
                 <h1 className="cps50 cbhe1 c21u3 cyb9k c41dw" data-aos="fade-down">
-                  Chess is like gymnastics for the mind
+                Chess: Training of the mind
                 </h1>
                 <p className="text-gray-600 c0atf czz36" data-aos="fade-down" data-aos-delay="150">
-                  Like gymnastics, chess can be a challenging and rewarding pursuit that offers both mental and physical benefits for those who engage in it.
+                For centuries chess has been a tool for people to develop their minds. Chess requires you to
+                think strategically take a step back and absorb the situation.
                 </p>
                 {/* CTA form */}
                 <ul className="text-gray-600 c0atf csd7z cd663 c2k38 cmhb9 c6xwf c2bi2" data-aos="fade-down" data-aos-delay="450">
@@ -90,19 +100,19 @@ export default function HomePage() {
                     <svg className="text-teal-400 c4u31 c2npy cui34 c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
                     </svg>
-                    <span>Card Deck and Management System</span>
+                    <span>Simple User Interface</span>
                   </li>
                   <li className="cxdxt csrqa cnc7y">
                     <svg className="text-teal-400 c4u31 c2npy cui34 c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
                     </svg>
-                    <span>Dynamic Card Effects</span>
+                    <span>Great For All Skill Levels</span>
                   </li>
                   <li className="cxdxt csrqa cnc7y">
                     <svg className="text-teal-400 c4u31 c2npy cui34 c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
                     </svg>
-                    <span>Turn-Based Strategy Enhancements</span>
+                    <span>A.I. Oponent for offline play</span>
                   </li>
                 </ul>
                 <div className="play-now">
@@ -187,7 +197,7 @@ export default function HomePage() {
 
             {/* Section header */}
             <div className="c5ymx calbx c1r3i cmhb9 ccem0">
-              <h2 className="cps50 cyb9k cdjn8">Our Features</h2>
+              <h2 className="cps50 cyb9k cdjn8">Why Choose Us</h2>
               <p className="text-gray-600 c0atf czz36">
                 We are dedicated to broadening and developing chess as art, recreation, and as a significant element of culture in the world.
               </p>
@@ -227,14 +237,14 @@ export default function HomePage() {
                       </svg>
                       <span className={`${category === id ? 'text-white cv8tj' : 'text-gray-600 cf26p'}`}>
                         {id === 1
-                          ? 'Card Deck and Management System'
+                          ? 'Innovative Learning Tools'
                           : id === 2
-                          ? 'Dynamic Card Effects'
+                          ? 'Community-Focused'
                           : id === 3
-                          ? 'Customizable Decks'
+                          ? 'Play Anywhere, Anytime'
                           : id === 4
-                          ? 'Turn-Based Strategy Enhancements'
-                          : 'Visual and Audio Effects'}
+                          ? 'Tailored Experience'
+                          : 'Secure & Fair Play'}
                       </span>
                     </button>
                   ))}
@@ -246,16 +256,18 @@ export default function HomePage() {
                     {category === 1 && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Card Draw</div>
-                          <div className="cvshg cyb9k c2h4q">Players draw a card at the beginning of the game or at certain intervals (e.g., every five turns).</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Innovative Learning Tools</div>
+                          <div className="cvshg cyb9k c2h4q">Our platform provides advanced tools and resources tailored for players at every level. With
+                          interactive lessons and AI-driven analysis, we help you elevate your chess game.</div>
                         </div>											
                       </div>
                     )}
                     {(category === 1 || category === 2) && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Card Inventory</div>
-                          <div className="cvshg cyb9k c2h4q">A user interface that allows players to view and manage their cards. The inventory should display each card&#39;s description and how many are left.</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Community-Focused</div>
+                          <div className="cvshg cyb9k c2h4q">Connect with a global network of chess enthusiasts. Engage in friendly matches, competitive
+                          tournaments, and seek advice—all within our supportive community.</div>
                         </div>											
                       </div>
                     )}
@@ -270,59 +282,41 @@ export default function HomePage() {
                     {(category === 1 || category === 4) && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Real-time Activation</div>
-                          <div className="cvshg cyb9k c2h4q">Cards can be activated at any point during the player&#39;s turn, allowing for real-time strategy adjustments.</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Play Anywhere, Anytime</div>
+                          <div className="cvshg cyb9k c2h4q">Enjoy a consistent chess experience across all devices. Whether you're using a desktop,
+                          mobile, or tablet, your games are always at your fingertips.</div>
                         </div>											
                       </div>
                     )}
                     {(category === 2 || category === 5) && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Conditional Triggers</div>
-                          <div className="cvshg cyb9k c2h4q">Some cards could have conditions that must be met before they can be played (e.g., &#34;Can only be used when your king is in check&#34;).</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Tailored Experience</div>
+                          <div className="cvshg cyb9k c2h4q">Customize your chess journey to fit your preferences. From personalized profiles to
+                          adjustable game settings and learning paths, our platform adapts to your needs.</div>
                         </div>											
                       </div>
                     )}
                     {(category === 2 || category === 3) && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Pre-Game Deck Building</div>
-                          <div className="cvshg cyb9k c2h4q">Before the game begins, players can customize their deck by selecting 10 cards from a larger pool. This allows players to tailor their strategy.</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Secure & Fair Play</div>
+                          <div className="cvshg cyb9k c2h4q">We ensure the integrity of every match with advanced anti-cheating measures and a secure
+                          gaming environment, guaranteeing fair and enjoyable gameplay.</div>
                         </div>											
                       </div>
                     )}
                     {(category === 2 || category === 4) && (
                       <div className="czjaw h-full">   
                         <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Card Types</div>
-                          <div className="cvshg cyb9k c2h4q">Different categories of cards (e.g., offensive, defensive, utility) allow players to create balanced or specialized decks.</div>
+                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Frequent Tournaments & Events</div>
+                          <div className="cvshg cyb9k c2h4q">Stay engaged with our regular tournaments and events. Compete with players at your skill
+                          level and climb the ranks to demonstrate your abilities.</div>
                         </div>											
                       </div>
                     )}
-                    {(category === 3 || category === 5) && (
-                      <div className="czjaw h-full">   
-                        <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                          <div className="cps50 ckyqm c21u3 czz36 ccipq">Turn Timer</div>
-                          <div className="cvshg cyb9k c2h4q">A countdown timer for each turn that adds pressure and excitement, particularly when deciding whether to use a card.</div>
-                        </div>											
-                      </div>
-                    )}
-                    {category === 5 && (
-                      <>
-                        <div className="czjaw h-full">   
-                          <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                            <div className="cps50 ckyqm c21u3 czz36 ccipq">Champion strategies</div>
-                            <div className="cvshg cyb9k c2h4q">A feature that allows players to try to predict which cards their opponent might have based on the game’s progression.</div>
-                          </div>											
-                        </div>
-                        <div className="czjaw h-full">   
-                          <div className="h-full text-white cgplj cxwxu bg-grade ch76r c54sb ccqhl cnc7y ccgug aos-init aos-animate">
-                            <div className="cps50 ckyqm c21u3 czz36 ccipq">Card Animations</div>
-                            <div className="cvshg cyb9k c2h4q">Visually impressive animations when a card is played, showing its effect on the board.</div>
-                          </div>											
-                        </div>
-                      </>
-                    )}
+                   
+                  
                   </div>
                 </div>
 
@@ -340,7 +334,7 @@ export default function HomePage() {
 
             {/* Section header */}
             <div className="c5ymx calbx cdoe6 cmhb9 ccem0">
-            <h2 className="cps50 cdjn8">Discover more features of the Chess Card Game</h2>
+            <h2 className="cps50 cdjn8">Our Features</h2>
             </div>
 
             {/* Items */}
@@ -360,8 +354,9 @@ export default function HomePage() {
                 fillRule="nonzero"
               ></path>
               </svg>
-              <div className="cps50 ckyqm c21u3 czz36 ccipq">Online Play</div>
-              <div className="cvshg cyb9k c2h4q">A multiplayer mode where players can compete against others online, using their customized card decks.</div>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Interactive Lessons & Tutorials</div>
+              <div className="cvshg cyb9k c2h4q">Master chess from the basics to advanced strategies through our comprehensive, interactive
+              lessons. Perfect for players at all levels.</div>
               <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path 
                 className="c4u31" 
@@ -385,8 +380,9 @@ export default function HomePage() {
                 fillRule="nonzero"
               ></path>
               </svg>
-              <div className="cps50 ckyqm c21u3 czz36 ccipq">Ranked Matches</div>
-              <div className="cvshg cyb9k c2h4q">A ranking system that takes into account both chess skills and card usage, allowing players to climb leaderboards.</div>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">AI-Powered Game Analysis</div>
+              <div className="cvshg cyb9k c2h4q">Improve your skills with powerful AI tools that offer move suggestions, in-depth feedback,
+              and detailed analysis of your games.</div>
               <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path 
                 className="c4u31" 
@@ -410,8 +406,9 @@ export default function HomePage() {
                 fillRule="nonzero"
               ></path>
               </svg>
-              <div className="cps50 ckyqm c21u3 czz36 ccipq">Friend Challenge</div>
-              <div className="cvshg cyb9k c2h4q">A feature that allows players to challenge friends to matches, with the option to choose specific card sets or rules.</div>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Real-Time Matchmaking</div>
+              <div className="cvshg cyb9k c2h4q">Instantly find opponents that match your skill level. Our smart matchmaking system ensures
+              you always face a challenging and enjoyable game.</div>
               <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path 
                 className="c4u31" 
@@ -435,8 +432,162 @@ export default function HomePage() {
                 fillRule="nonzero"
               ></path>
               </svg>
-              <div className="cps50 ckyqm c21u3 czz36 ccipq">Adaptive AI</div>
-              <div className="cvshg cyb9k c2h4q">AI opponents that can adapt to the player’s use of cards, providing a challenging experience.</div>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Tournaments & Leagues</div>
+              <div className="cvshg cyb9k c2h4q">Join daily, weekly, and monthly tournaments. Participate in leagues to compete with others at
+              your level and rise up the leaderboard.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+
+            {/* 5th item */}
+            <a 
+              className="text-white cgplj cxwxu cssaq cct02 ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M19 18.414l-4 4L9.586 17l.707-.707L12 14.586V8.414l-5-5L4.414 6l6.293 6.293-1.414 1.414L1.586 6 7 .586l7 7v5l8.463-8.463a3.828 3.828 0 115.414 5.414L21 16.414v6.172l5 5L28.586 25l-6.293-6.293 1.414-1.414L31.414 25 26 30.414l-7-7v-5zm-4 1.172L26.463 8.123a1.828 1.828 0 10-2.586-2.586L12.414 17 15 19.586zM11 30v2C4.925 32 0 27.075 0 21h2a9 9 0 009 9zm0-5v2a6 6 0 01-6-6h2a4 4 0 004 4z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Puzzle Trainer</div>
+              <div className="cvshg cyb9k c2h4q">Enhance your tactical skills with a vast collection of chess puzzles. Choose from various
+              themes and difficulty levels to keep challenging yourself.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+
+            {/* 6th item */}
+            <a 
+              className="text-white cf0yc cgplj c65d8 cppj5 ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]" 
+              data-aos-delay="100"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M20.796 20l-1.677 7.264a6 6 0 01-7.302 4.471L0 28.781V11.54l.35-.3 9.457-8.107a3.751 3.751 0 015.29 5.29L11.175 13H28.5a3.5 3.5 0 012.6 1.156c.663.736.984 1.72.878 2.74-.252 1.808-1.817 3.143-3.622 3.104h-7.56zM2 27.22l10.303 2.575a4 4 0 004.868-2.98L19.204 18h9.173c.812.018 1.508-.575 1.615-1.345A1.5 1.5 0 0028.5 15H11.173a2 2 0 01-1.517-3.3l3.922-4.577a1.755 1.755 0 00-.597-2.733 1.751 1.751 0 00-1.872.262L2 12.46v14.76zM28 .585L29.414 2 23 8.414 21.586 7 28 .586zm-8.272 6.627l-1.94-.485 1.484-5.94 1.94.484-1.484 5.94zm3.544 5l-.485-1.94 5.94-1.486.486 1.94-5.94 1.486z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Customizable Board & Pieces</div>
+              <div className="cvshg cyb9k c2h4q">Make every game visually appealing by selecting from a variety of board themes and piece
+              designs that suit your style.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+
+            {/* 7th item */}
+            <a 
+              className="text-white cjrbh cgplj cykzy cn0r1 ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]" 
+              data-aos-delay="200"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M19 5.612V25a6 6 0 11-2-4.472V0h2v2.961A5.98 5.98 0 0023.497 5a8.476 8.476 0 018.444 9.474l-.253 2.13-1.469-1.563A6.472 6.472 0 0025.5 13c-1.842 0-3.634-.6-5.103-1.713l1.206-1.594A6.455 6.455 0 0025.5 11c1.557 0 3.068.428 4.376 1.217A6.475 6.475 0 0023.5 7 7.981 7.981 0 0119 5.612zM13 29a4 4 0 100-8 4 4 0 000 8zM0 5V3h14v2H0zm0 5V8h14v2H0zm0 5v-2h14v2H0z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Detailed Player Profiles</div>
+              <div className="cvshg cyb9k c2h4q">Monitor your progress, review game history, and compare stats with other players. Your
+              profile reflects your chess journey.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+
+            {/* 8th item */}
+            <a 
+              className="text-white cgplj cyfvj chrd2 cxp5i ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]" 
+              data-aos-delay="300"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M20.243 6.757l.707.707-1.414 1.414-.707-.707a4 4 0 00-5.658 0l-.707.707-1.414-1.414.707-.707a6 6 0 018.486 0zm3.535-3.535l.707.707-1.414 1.414-.707-.707a9 9 0 00-12.728 0l-.707.707L7.515 3.93l.707-.707c4.296-4.296 11.26-4.296 15.556 0zM9 17.212V16a7 7 0 00-7-7H1V7h1a9 9 0 019 9v.788l2.302 5.18L11 23.117V24a4 4 0 01-4 4H5v3H3v-5h4a2 2 0 002-2v-2.118l1.698-.85L9 17.213zm12-.424V16a9 9 0 019-9h1v2h-1a7 7 0 00-7 7v1.212l-1.698 3.82 1.698.85V24a2 2 0 002 2h4v5h-2v-3h-2a4 4 0 01-4-4v-.882l-2.302-1.15L21 16.787zM16 12a1 1 0 110-2 1 1 0 010 2z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Social Features</div>
+              <div className="cvshg cyb9k c2h4q">Stay connected with friends, join clubs, and follow top players. Our platform makes it easy to
+              connect with others who share your passion for chess.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+            {/* 9th item */}
+            <a 
+              className="text-white cgplj cxwxu cssaq cct02 ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M19 18.414l-4 4L9.586 17l.707-.707L12 14.586V8.414l-5-5L4.414 6l6.293 6.293-1.414 1.414L1.586 6 7 .586l7 7v5l8.463-8.463a3.828 3.828 0 115.414 5.414L21 16.414v6.172l5 5L28.586 25l-6.293-6.293 1.414-1.414L31.414 25 26 30.414l-7-7v-5zm-4 1.172L26.463 8.123a1.828 1.828 0 10-2.586-2.586L12.414 17 15 19.586zM11 30v2C4.925 32 0 27.075 0 21h2a9 9 0 009 9zm0-5v2a6 6 0 01-6-6h2a4 4 0 004 4z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Cross-Device Synchronization</div>
+              <div className="cvshg cyb9k c2h4q">Start a game on one device and continue on another. Your games are always synchronized,
+              allowing for uninterrupted play.</div>
+              <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M13 11V5.057L22.72 12 13 18.943V13H2v-2h11zm2 4.057L19.28 12 15 8.943v6.114z" 
+              ></path>
+              </svg>
+            </a>
+
+            {/* 10th item */}
+            <a 
+              className="text-white cf0yc cgplj c65d8 cppj5 ch76r c54sb ccqhl cnc7y ccgug" 
+              href="#0" 
+              data-aos="fade-down" 
+              data-aos-anchor="[data-aos-id-featbl]" 
+              data-aos-delay="100"
+            >
+              <svg className="cyws0 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                className="c4u31" 
+                d="M20.796 20l-1.677 7.264a6 6 0 01-7.302 4.471L0 28.781V11.54l.35-.3 9.457-8.107a3.751 3.751 0 015.29 5.29L11.175 13H28.5a3.5 3.5 0 012.6 1.156c.663.736.984 1.72.878 2.74-.252 1.808-1.817 3.143-3.622 3.104h-7.56zM2 27.22l10.303 2.575a4 4 0 004.868-2.98L19.204 18h9.173c.812.018 1.508-.575 1.615-1.345A1.5 1.5 0 0028.5 15H11.173a2 2 0 01-1.517-3.3l3.922-4.577a1.755 1.755 0 00-.597-2.733 1.751 1.751 0 00-1.872.262L2 12.46v14.76zM28 .585L29.414 2 23 8.414 21.586 7 28 .586zm-8.272 6.627l-1.94-.485 1.484-5.94 1.94.484-1.484 5.94zm3.544 5l-.485-1.94 5.94-1.486.486 1.94-5.94 1.486z" 
+                fillRule="nonzero"
+              ></path>
+              </svg>
+              <div className="cps50 ckyqm c21u3 czz36 ccipq">Comprehensive Opening Explorer</div>
+              <div className="cvshg cyb9k c2h4q">Dive into thousands of openings and their variations. Study the strategies of chess masters
+              and build your own repertoire.</div>
               <svg className="ca6it crgjb clq5w ccb29 ceo83 cgdju c1xg5 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path 
                 className="c4u31" 
@@ -529,7 +680,7 @@ export default function HomePage() {
             {/* CTA content */}
             <div className="c346e c5ymx c9epb cescn crh83 cnxpd">
               <h3 className="cps50 crnbw cm36t">
-              Experience the Future of Chess! Try Our Fastest Strategy Now!
+              Experience the Future of Chess! 
               </h3>
             </div>
 
