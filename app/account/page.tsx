@@ -1,5 +1,9 @@
-export default async function Page(){
-    return(
-        <div></div>
-    )
+import { redirect } from "next/navigation";
+
+export default async function Page() {
+  redirect('/');
+  return(
+    <>
+    </>
+  )
 }

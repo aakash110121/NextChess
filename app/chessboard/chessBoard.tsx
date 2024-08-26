@@ -1474,38 +1474,6 @@ const ChessboardClient = ({ gameId, game, user, subscription, settings, lout}:an
   return (
     //className "flex justify-center align-center"
     <div className="relative w-full overflow-x-auto">
-      <section
-        id="learnmoreNavbar"
-        className={` bg-[#124429] h-[48px] sticky md:hidden z-[50] top-0 left-0 right-0 px-4  py-[8px]  justify-center transform-all transition ease-in-out duration-1000`}
-      >
-        <svg
-          style={{ filter: "contrast(125%) brightness(110%)" }}
-          className="absolute w-full h-[48px] left-0 right-0 top-0 bottom-0 z-0 opacity-[35%]"
-        >
-          <filter id="noise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency=".7"
-              numOctaves="3"
-              stitchTiles="stitch"
-            ></feTurbulence>
-            <feColorMatrix type="saturate" values="0"></feColorMatrix>
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)"></rect>
-        </svg>
-        <div className="absolute w-full h-[48px] top-[6px]">
-          <RxHamburgerMenu
-            onClick={() => toggleComponentVisibility()}
-            className="h-[36px] w-[36px]  text-white hover:bg-white/30 transition-all duration-300 cursor-pointer p-1 rounded-full"
-          />
-        </div>
-      </section>
-      {isMobileMenuVisible && (
-        <MobileSidebar
-          toggleComponentVisibility={toggleComponentVisibility}
-          lout={lout}
-        ></MobileSidebar>
-      )}
       <div className="w-full lg:flex pt-4">
         <Board
           fenString={chess.fen()}
