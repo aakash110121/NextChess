@@ -14,7 +14,7 @@ export default function HomePage() {
       id: 1,
       imgSrc: Testimonial1,
       altText: 'Testimonial 01',
-      quote: '“ This platform is a game-changer for chess enthusiasts like me. The AI analysis feature has drastically improved my understanding of the game. I can now pinpoint my mistakes and learn from them in real-time. The seamless experience across my phone and laptop makes it even better. Highly recommended for anyone serious about improving their chess skills! “',
+      quote: '“ This platform is a game-changer for chess enthusiasts like me. The AI analysis feature has drastically improved my understanding of the game. I can now pinpoint my mistakes and learn from them in real-time. The seamless experience across my phone and laptop makes it even better. Highly recommended for anyone serious about improving their chess skills! ”',
       author: 'Alex P.',
       company: '',
       link: '#0',
@@ -23,7 +23,7 @@ export default function HomePage() {
       id: 2,
       imgSrc: Testimonial2,
       altText: 'Testimonial 02',
-      quote: '“ I&#39; ve tried a few online chess platforms, but this one stands out. The interactive lessons are top-notch, making it easy to grasp even the most complex trategies. The community here is also great—I&#39;ve met players from all over the world and even found a regular sparring partner. This is my go-to place for all things hess." ',
+      quote: "\" I've tried a few online chess platforms, but this one stands out. The interactive lessons are top-notch, making it easy to grasp even the most complex strategies. The community here is also great—I've met players from all over the world and even found a regular sparring partner. This is my go-to place for all things chess. ”",
       author: 'Sophia L.',
       company: '',
       link: '#0',
@@ -32,7 +32,7 @@ export default function HomePage() {
       id: 3,
       imgSrc: Testimonial3,
       altText: 'Testimonial 03',
-      quote: '“ As someone who enjoys a good challenge, the regular tournaments on this platform are fantastic. The matchmaking is spot-on, so I always get to play against someone at my level.The puzzle trainer is another feature I love—it keeps me sharp and ready for any game.Plus, I can customize my board and pieces, making the experience more personal. “',
+      quote: '“ As someone who enjoys a good challenge, the regular tournaments on this platform are fantastic. The matchmaking is spot-on, so I always get to play against someone at my level.The puzzle trainer is another feature I love—it keeps me sharp and ready for any game.Plus, I can customize my board and pieces, making the experience more personal. ”',
       author: 'Michael R.',
       company: 'Sync',
       link: '#0',
@@ -41,7 +41,7 @@ export default function HomePage() {
       id: 4,
       imgSrc: Testimonial4,
       altText: 'Testimonial 04',
-      quote: '“ I appreciate how this platform caters to both beginners and experienced players. The detailed player profiles help me track my progress and see where I stand compared to others. The cross-device sync is flawless—I can start a game on my tablet and finish it on my desktop without any issues. It’s a must-try for chess lovers. “',
+      quote: '“ I appreciate how this platform caters to both beginners and experienced players. The detailed player profiles help me track my progress and see where I stand compared to others. The cross-device sync is flawless—I can start a game on my tablet and finish it on my desktop without any issues. It’s a must-try for chess lovers. ”',
       author: 'Emma K.',
       company: 'Appicu',
       link: '#0',
@@ -50,7 +50,7 @@ export default function HomePage() {
       id: 5,
       imgSrc: Testimonial4,
       altText: 'Testimonial 05',
-      quote: '“ Security is a big deal for me, and this platform doesn’t disappoint. The anti-cheating measures are robust, ensuring that every match is fair. I’ve been playing here for months,and I’ve never encountered any issues. The site also offers a great variety of features, from opening explorers to in-depth game analysis. It’s everything a chess player could ask for. “',
+      quote: '“ Security is a big deal for me, and this platform doesn’t disappoint. The anti-cheating measures are robust, ensuring that every match is fair. I’ve been playing here for months, and I’ve never encountered any issues. The site also offers a great variety of features, from opening explorers to in-depth game analysis. It’s everything a chess player could ask for. ”',
       author: 'James T.',
       company: 'Appicu',
       link: '#0',
@@ -198,9 +198,6 @@ export default function HomePage() {
             {/* Section header */}
             <div className="c5ymx calbx c1r3i cmhb9 ccem0">
               <h2 className="cps50 cyb9k cdjn8">Why Choose Us</h2>
-              <p className="text-gray-600 c0atf czz36">
-                We are dedicated to broadening and developing chess as art, recreation, and as a significant element of culture in the world.
-              </p>
             </div>
 
             {/* Section content */}

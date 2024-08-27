@@ -46,9 +46,6 @@ export default async function Page() {
                         How to Play Chess on Our Platform
                       </h1>
                     </a>
-                    <p className="text-gray-600 c0atf czz36">
-                      Welcome to the &#34;How to Play&#34; guide for Squsts. Whether you&#39;re new to chess or looking to master our unique card-enhanced version, this guide will walk you through the basics and help you get started. Let&#39;s dive in!
-                    </p>
                   </div>
                 </header>
               </article>
@@ -283,7 +280,7 @@ export default async function Page() {
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      <p><strong>Player Profiles:</strong> ITrack your progress, view your game history, and compare your stats with
+                      <p><strong>Player Profiles:</strong> I Track your progress, view your game history, and compare your stats with
                       other players.</p>
                       <p><strong>Opening Explorer:</strong> Study different chess openings and see how grandmasters played them.</p>
                       <p><strong>Join Clubs:</strong> Become a member of chess clubs, participate in club events, and meet
@@ -320,7 +317,7 @@ export default async function Page() {
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                    <p><strong>Follow Top Players:</strong> AWatch live games from top-rated players and learn from their
+                    <p><strong>Follow Top Players:</strong> A Watch live games from top-rated players and learn from their
                     strategies.</p>
                     <p><strong>Participate in Events:</strong> Check the events calendar regularly for upcoming tournaments and
                     special events.</p>
