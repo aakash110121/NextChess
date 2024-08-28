@@ -23,7 +23,7 @@ export default function HomePage() {
       id: 2,
       imgSrc: Testimonial2,
       altText: 'Testimonial 02',
-      quote: "\" I've tried a few online chess platforms, but this one stands out. The interactive lessons are top-notch, making it easy to grasp even the most complex strategies. The community here is also great—I've met players from all over the world and even found a regular sparring partner. This is my go-to place for all things chess. ”",
+      quote: "“ I've tried a few online chess platforms, but this one stands out. The interactive lessons are top-notch, making it easy to grasp even the most complex strategies. The community here is also great—I've met players from all over the world and even found a regular sparring partner. This is my go-to place for all things chess. ”",
       author: 'Sophia L.',
       company: '',
       link: '#0',

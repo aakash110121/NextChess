@@ -280,7 +280,7 @@ export default async function Page() {
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                      <p><strong>Player Profiles:</strong> I Track your progress, view your game history, and compare your stats with
+                      <p><strong>Player Profiles:</strong> Track your progress, view your game history, and compare your stats with
                       other players.</p>
                       <p><strong>Opening Explorer:</strong> Study different chess openings and see how grandmasters played them.</p>
                       <p><strong>Join Clubs:</strong> Become a member of chess clubs, participate in club events, and meet
@@ -317,7 +317,7 @@ export default async function Page() {
                   </header>
                   <footer>
                     <div className="cvshg ceng1">
-                    <p><strong>Follow Top Players:</strong> A Watch live games from top-rated players and learn from their
+                    <p><strong>Follow Top Players:</strong> Watch live games from top-rated players and learn from their
                     strategies.</p>
                     <p><strong>Participate in Events:</strong> Check the events calendar regularly for upcoming tournaments and
                     special events.</p>
