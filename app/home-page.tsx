@@ -5,6 +5,7 @@ import Testimonial1 from '@/public/images/testimonial-01.jpg';
 import Testimonial2 from '@/public/images/testimonial-02.jpg';
 import Testimonial3 from '@/public/images/testimonial-03.jpg';
 import Testimonial4 from '@/public/images/testimonial-04.jpg';
+import Testimonial5 from '@/public/images/testimonial-05.png';
 
 
 export default function HomePage() {
@@ -48,7 +49,7 @@ export default function HomePage() {
     },
     {
       id: 5,
-      imgSrc: Testimonial4,
+      imgSrc: Testimonial5,
       altText: 'Testimonial 05',
       quote: '“ Security is a big deal for me, and this platform doesn’t disappoint. The anti-cheating measures are robust, ensuring that every match is fair. I’ve been playing here for months, and I’ve never encountered any issues. The site also offers a great variety of features, from opening explorers to in-depth game analysis. It’s everything a chess player could ask for. ”',
       author: 'James T.',

@@ -165,10 +165,10 @@ export default async function Page() {
                         title="Classic Chess"
                         description="Enjoy the traditional game of chess with beautifully designed boards and pieces."
                       />
-                      <Article
+                    {/*  <Article
                         title="Card-Enhanced Gameplay"
                         description="Discover a new twist on chess with our unique card system, adding layers of strategy and unpredictability to the game."
-                      />
+                      />*/}
                       <Article
                         title="Multiplayer Modes"
                         description="Challenge friends or compete against players from around the world in our online multiplayer mode."
