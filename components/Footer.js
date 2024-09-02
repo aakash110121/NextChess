@@ -75,7 +75,7 @@ export default function Footer() {
 
               {/* Middle links */}
               <div className="c91hr ctzwv c4u1v ceng1 csrqa">
-                <a className="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Terms</a> · <a className="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Privacy Policy</a>
+                <a className="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="/terms-and-conditions">Terms</a> · <a className="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="/privacy-policy">Privacy Policy</a>
               </div>
 
               {/* Copyrights note */}
