@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from "next";
 import Image from 'next/image';
-import HeroBgImg from '@/public/images/hero-bg-03.jpg';
+import HeroBgImgtour from '@/public/images/tournaments-banner.jpg';
 import WhyIcon1 from '@/public/images/chess-type.png';
 import WhyIcon2 from '@/public/images/chess-type1.png';
 import WhyIcon3 from '@/public/images/chess-type2.png';
@@ -23,7 +23,7 @@ return (
    <div className="cbng2 cgk3d c2ysc c4shy cgjq2 codcr">
       <Image
          className="c9sso c3j32 cgk3d c2ysc c1zcx cs8sl"
-         src={HeroBgImg}
+         src={HeroBgImgtour}
          width={1440}
          height={577}
          alt="How to play"

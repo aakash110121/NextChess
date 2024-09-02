@@ -3860,3 +3860,48 @@ button.text-left {
 .dark .why-img img {
     filter: brightness(0) invert(1);
 }
+
+
+
+
+
+.privacy-wrap{
+    margin: 1.25rem 0;
+}
+
+.privacy-wrap h3{
+font-size: 1.75rem;
+font-weight: 600;
+margin-bottom: 0.625rem;
+}
+.privacy-wrap h4{
+font-size: 1.375rem;
+font-weight: 600;
+margin-bottom: 0.625rem;
+}
+.privacy-wrap p{
+font-size: 1rem;
+margin-bottom: 0.625rem;
+}
+
+.privacy-wrap ul {
+padding-left: 1.25rem;
+list-style: disc;
+margin:0.625rem 0;
+}
+
+.privacy-wrap ul li{
+font-size: 1rem ;
+padding: 2px;
+}
+
+.privacy-wrap ul li a, .privacy-wrap p a{
+text-decoration: underline;
+font-weight: 500;
+}
+
+.privacy-wrap ol{
+    padding-left: 0;
+    margin: 0.625rem 0;
+    list-style: none;
+}
