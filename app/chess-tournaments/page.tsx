@@ -47,7 +47,7 @@ return (
                         </h1>
                      </a>
                      <p className="text-gray-600 c0atf czz36">Looking for thrilling online chess tournaments? Squsts offers a competitive platform for
-                        chess players of all skill levels. Whether you're a beginner or a seasoned grandmaster, our
+                        chess players of all skill levels. Whether you&#39;re a beginner or a seasoned grandmaster, our
                         chess tournaments provide the perfect arena to test your strategies and compete for prizes.
                      </p>
                      <p  className="text-gray-600 c0atf czz36">
