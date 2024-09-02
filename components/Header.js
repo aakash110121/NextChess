@@ -80,6 +80,11 @@ export default function Header() {
                     How to play
                   </Link>
                 </li>
+                <li>
+                  <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="chess-tournaments">
+                  Chess Tournaments
+                  </Link>
+                </li>
               </ul>
 
               {/* Desktop lights switch */}
