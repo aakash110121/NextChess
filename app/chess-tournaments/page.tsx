@@ -62,6 +62,8 @@ return (
 <section>
    <div className="czd2q c92f3 cmhb9 c1plj">
       <div className="c1r3i ccem0">
+      <div className="c5okk" data-aos="fade-down" data-aos-delay="200">
+      <h4 className="cps50 cyb9k cm36t">Why Play on Squsts?</h4>
          <div className="why-play">
             <div className="why-wrap">
                <div className="why-img cyb9k">
@@ -231,6 +233,7 @@ community.
             </div>
 
          </div>
+     </div>
       </div>
    </div>
 </section>

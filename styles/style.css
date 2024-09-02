@@ -3431,6 +3431,12 @@ input[type=range]::-moz-focus-outer {
         font-size: 1.125rem;
         line-height: 1.5
     }
+    .why-play{
+        gap:1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
 }
 
 @media (min-width:768px) {
@@ -3756,6 +3762,9 @@ input[type=range]::-moz-focus-outer {
     .get-started .cdxx5 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .why-play{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .brand {
@@ -3841,7 +3850,7 @@ button.text-left {
 
 .why-play{
     display:grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
     gap:1rem;
 }
 .why-wrap {
