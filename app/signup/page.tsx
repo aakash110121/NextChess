@@ -33,7 +33,7 @@ return (
     <div className="wrapper register">
         <a href="index.html"><span className="icon-close">X</span></a>
     
-    <h2>Registration</h2>
+    <h2>Sign up</h2>
     
     <div className="input-box">
         <span className="icon"></span>
@@ -54,7 +54,7 @@ return (
     <div className="remember-forgot">
         <label><input type="checkbox" />Remember me</label>
     </div>
-    <a href="login.html"><button type="submit" className="btn">Register</button></a>
+    <a href="login.html"><button type="submit" className="btn">Sign up</button></a>
     <div className="login-register">
       <p>Already have an account?<a href="" className="register-link"><button className="btn">Login</button>
         
