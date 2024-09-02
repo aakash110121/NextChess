@@ -3753,6 +3753,9 @@ input[type=range]::-moz-focus-outer {
         font-size: 5.5rem;
         line-height: 1.11
     }
+    .get-started .cdxx5 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .brand {
@@ -3828,3 +3831,23 @@ button.text-left {
     width: 100%;
 }
 
+/* new css start */
+
+.competing-txt p a, .how-to-play .strng p a {
+    font-weight: 500;
+    text-decoration: underline;
+    /* color: #000; */
+}
+
+.why-play{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:1rem;
+}
+.why-wrap {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1.25rem;
+}
+.dark .why-img img {
+    filter: brightness(0) invert(1);
+}
