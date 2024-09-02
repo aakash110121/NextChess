@@ -3431,6 +3431,12 @@ input[type=range]::-moz-focus-outer {
         font-size: 1.125rem;
         line-height: 1.5
     }
+    .why-play{
+        gap:1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
 }
 
 @media (min-width:768px) {
@@ -3753,6 +3759,12 @@ input[type=range]::-moz-focus-outer {
         font-size: 5.5rem;
         line-height: 1.11
     }
+    .get-started .cdxx5 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .why-play{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .brand {
@@ -3827,3 +3839,162 @@ button.text-left {
     max-width: 167px;
     width: 100%;
 }
+
+/* new css start */
+
+.competing-txt p a, .how-to-play .strng p a {
+    font-weight: 500;
+    text-decoration: underline;
+    /* color: #000; */
+}
+
+.why-play{
+    display:grid;
+    /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
+    gap:1rem;
+}
+.why-wrap {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1.25rem;
+}
+.dark .why-img img {
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+
+.privacy-wrap{
+    margin: 1.25rem 0;
+}
+
+.privacy-wrap h3{
+font-size: 1.75rem;
+font-weight: 600;
+margin-bottom: 0.625rem;
+}
+.privacy-wrap h4{
+font-size: 1.375rem;
+font-weight: 600;
+margin-bottom: 0.625rem;
+}
+.privacy-wrap p{
+font-size: 1rem;
+margin-bottom: 0.625rem;
+}
+
+.privacy-wrap ul {
+padding-left: 1.25rem;
+list-style: disc;
+margin:0.625rem 0;
+}
+
+.privacy-wrap ul li{
+font-size: 1rem ;
+padding: 2px;
+}
+
+.privacy-wrap ul li a, .privacy-wrap p a{
+text-decoration: underline;
+font-weight: 500;
+}
+
+.privacy-wrap ol{
+    padding-left: 0;
+    margin: 0.625rem 0;
+    list-style: none;
+}
+
+a.signup-btn {
+    background: #b70000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid #b70000;
+}
+
+a.signup-btn:hover{
+    background:#911a1a;
+}
+
+
+
+
+
+
+
+
+.cookies-wrap .wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 345px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: right 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .cookies-wrap .wrapper.show {
+    right: 20px;
+  }
+  .cookies-wrap .wrapper header {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+  .cookies-wrap header i {
+    color: #b70000;
+    font-size: 32px;
+  }
+ .cookies-wrap header h2 {
+    color: #b70000;
+    font-weight: 500;
+  }
+  .cookies-wrap .wrapper .data {
+    margin-top: 16px;
+  }
+  .cookies-wrap .wrapper .data p {
+    color: #333;
+    font-size: 16px;
+  }
+  .cookies-wrap .data p a {
+    color: #b70000;
+    text-decoration: none;
+  }
+ .cookies-wrap .data p a:hover {
+    text-decoration: underline;
+  }
+  .cookies-wrap .wrapper .buttons {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cookies-wrap .buttons .button {
+    border: none;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 4px;
+    background: #b70000;
+    cursor: pointer;
+    width: calc(100% / 2 - 10px);
+    transition: all 0.2s ease;
+  }
+  .cookies-wrap .buttons #acceptBtn:hover {
+    background-color: #911a1a;
+  }
+ .cookies-wrap  #declineBtn {
+    border: 2px solid #b70000;
+    background-color: #fff;
+    color: #b70000;
+  }
+ .cookies-wrap  #declineBtn:hover {
+    background-color: #b70000;
+    color: #fff;
+  }
