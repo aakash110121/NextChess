@@ -1,5 +1,5 @@
 'use client'
-
+import CookiesPop from "@/components/Cookies";
 export default function Footer() {
   return (
     <>
@@ -85,7 +85,15 @@ export default function Footer() {
 
           </div>
         </div>
+        
       </footer>
+      
+
+    <CookiesPop></CookiesPop>
+
+
+
+
     </>
   )
 }

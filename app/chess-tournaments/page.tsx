@@ -50,6 +50,10 @@ return (
                         chess players of all skill levels. Whether you're a beginner or a seasoned grandmaster, our
                         chess tournaments provide the perfect arena to test your strategies and compete for prizes.
                      </p>
+                     <p  className="text-gray-600 c0atf czz36">
+                     Sign Up And Begin Playing!
+                     </p>
+                     <a href="#0" className="signup-btn">Sign Up</a>
                   </div>
                </header>
             </article>
