@@ -45,7 +45,7 @@ export default async function Page() {
                          <p className="text-gray-600 c0atf czz36">Welcome to www.squsts.com!
 
                          </p>
-                         <p className="text-gray-600 c0atf czz36">These terms and conditions outline the rules and regulations for the use of Squsts's
+                         <p className="text-gray-600 c0atf czz36">These terms and conditions outline the rules and regulations for the use of Squsts&rsquo;s
 Website, located at <a href="http://squsts.com">http://squsts.com.</a>
 
                          </p>
@@ -74,10 +74,10 @@ conditions stated on this page.
                 <div className="privacy-wrap">
     <p>
        The following terminology applies to these Terms and Conditions, Privacy Statement
-       and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the
+       and Disclaimer Notice and all Agreements: &rdquo;Client&rdquo;, &rdquo;You&rdquo; and &rdquo;Your&rdquo; refers to you, the
        person log on this website and compliant to the Company’s terms and conditions.
-       "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party",
-       "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer,
+       &rdquo;The Company&rdquo;, &rdquo;Ourselves&rdquo;, &rdquo;We&rdquo;, &rdquo;Our&rdquo; and &rdquo;Us&rdquo;, refers to our Company. &rdquo;Party&rdquo;,
+       &rdquo;Parties&rdquo;, or &rdquo;Us&rdquo;, refers to both the Client and ourselves. All terms refer to the offer,
        acceptance and consideration of payment necessary to undertake the process of our
        assistance to the Client in the most appropriate manner for the express purpose of
        meeting the Client’s needs in respect of provision of the Company’s stated services,
@@ -92,7 +92,7 @@ conditions stated on this page.
     </h4>
     <p>
        We employ the use of cookies. By accessing www.squsts.com, you agreed to use
-       cookies in agreement with the Squsts's Privacy Policy.
+       cookies in agreement with the Squsts&rsquo;s Privacy Policy.
     </p>
     <p>
        Most interactive websites use cookies to let us retrieve the user’s details for each
@@ -306,7 +306,7 @@ conditions stated on this page.
        </li>
     </ul>
     <p>
-       No use of Squsts's logo or other artwork will be allowed for linking absent a
+       No use of Squsts&rsquo;s logo or other artwork will be allowed for linking absent a
        trademark license agreement.
     </p>
  </div>
