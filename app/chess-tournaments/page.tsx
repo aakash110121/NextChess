@@ -53,7 +53,7 @@ return (
                      <p  className="text-gray-600 c0atf czz36">
                      Sign Up And Begin Playing!
                      </p>
-                     <a href="#0" className="signup-btn">Sign Up</a>
+                     <a href="/signup" className="signup-btn">Sign Up</a>
                   </div>
                </header>
             </article>

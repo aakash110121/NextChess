@@ -54,9 +54,9 @@ return (
     <div className="remember-forgot">
         <label><input type="checkbox" />Remember me</label>
     </div>
-    <a href="login.html"><button type="submit" className="btn">Login</button></a>
+    <a href="/login"><button type="submit" className="btn">Login</button></a>
     <div className="login-register">
-      <p>Don&#39;t have an account?<a href="" className="register-link"><button className="btn">Sign up</button>
+      <p>Don&#39;t have an account?<a href="/signup" className="register-link"><button className="btn">Sign up</button>
         
        </a>
       </p>
