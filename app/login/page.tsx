@@ -56,7 +56,7 @@ return (
     </div>
     <button type="submit" className="btn">Login</button>
     <div className="login-register">
-      <p>Don't have an account?<a href="/signup" className="register-link"><button className="btn">Sign up</button>
+      <p>Don&#39;t have an account?<a href="/signup" className="register-link"><button className="btn">Sign up</button>
         
        </a>
       </p>
