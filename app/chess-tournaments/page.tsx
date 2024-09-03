@@ -41,11 +41,9 @@ return (
                <header>
                   {/* Title and excerpt */}
                   <div className="c7z56 c5ymx">
-                     <a href="blog-post.html">
                         <h1 className="cps50 cyb9k c41dw">
                            Join the Excitement: Squsts Chess Tournaments
                         </h1>
-                     </a>
                      <p className="text-gray-600 c0atf czz36">Looking for thrilling online chess tournaments? Squsts offers a competitive platform for
                         chess players of all skill levels. Whether you&#39;re a beginner or a seasoned grandmaster, our
                         chess tournaments provide the perfect arena to test your strategies and compete for prizes.
@@ -525,11 +523,11 @@ community.
                   </article>
                </div>
                {/* Call to Action Article */}
-               <div className="cszww c5v0a c74as mert">
+               <div className="cszww c5v0a c74as mert competing-bx">
                   <article className="cj3dx ch76r c54sb c6zr7 cnc7y cdt9h">
                      <header>
                         <h3 className="cps50 ccipq cadh6">
-                           <a href="#0">Start Competing Today!</a>
+                           <a href="javascript:void(0)">Start Competing Today!</a>
                         </h3>
                      </header>
                      <div className="text-gray-600 c0atf c2h4q competing-txt">

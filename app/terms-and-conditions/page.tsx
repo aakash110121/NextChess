@@ -35,13 +35,13 @@ export default async function Page() {
                 <article>
                    <header>
                       {/* Title and excerpt */}
-                      <div className="c7z56 c5ymx">
-                         <a href="blog-post.html">
+                      <div className="c7z56 c5ymx privacy-banner">
+                         
                             <h1 className="cps50 cyb9k c41dw">
                             Terms And Conditions
 
                             </h1>
-                         </a>
+                       
                          <p className="text-gray-600 c0atf czz36">Welcome to www.squsts.com!
 
                          </p>

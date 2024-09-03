@@ -4147,12 +4147,50 @@ a.signup-btn:hover{
     margin-top: 50px;
 }
 
+.mobile-nav-btn{
+        width: fit-content;
+        padding: 8px 30px;
+        margin-left: 20px;
+}
+.competing-bx h3 a{
+    cursor: inherit;
+}
+.privacy-banner h1 {
+    font-size: 2.5rem;
+}
+/* .user-login img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+} */
+.user-login a {
+    background: transparent !important;
+    display:inline-block;
+    width: 100%;
+    height: 100%;
+    color: #b70000;
+    font-weight: 700;
+}
 
+.user-login {
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
-
-
+@media(max-width:992px){
+    .site-main-header .czak8 {
+        display: inline-flex;
+    }
+    .site-main-header .cfrwd {
+        display: none;
+    }
+    li.user-login {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
 
 
 
@@ -4168,10 +4206,29 @@ a.signup-btn:hover{
     .login-wrap .wrapper {
         padding: 25px;
     }
+    .privacy-banner h1 {
+        font-size: 2.2rem;
+    }
+    .user-login a {
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .form-switch.cw3my.c54sb.ccond.cnc7y {
+        margin-right: 1rem;
+    }
 }
 
 @media(max-width:374px){
     .cookies-wrap .wrapper {
         max-width: 290px;
       }
+      html{
+        font-size:14px;
+      }
+ 
+}
+@media(max-width:330px){
+ .site-main-header   .c2npy.cbbvf {
+    margin-right: 0rem;
+    }
 }

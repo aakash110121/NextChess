@@ -41,11 +41,9 @@ export default async function Page() {
                 <header>
                   {/* Title and excerpt */}
                   <div className="c7z56 c5ymx">
-                    <a href="blog-post.html">
                       <h1 className="cps50 cyb9k c41dw">
                         How to Play Chess on Our Platform
                       </h1>
-                    </a>
                   </div>
                 </header>
               </article>
@@ -414,7 +412,7 @@ export default async function Page() {
                 </div>*/}
 
                 {/* Call to Action Article */}
-                <div className="cszww c5v0a c74as mert">
+                <div className="cszww c5v0a c74as mert competing-bx">
                   <article className="cj3dx ch76r c54sb c6zr7 cnc7y cdt9h">
                     <header>
                       <h3 className="cps50 ccipq cadh6">
