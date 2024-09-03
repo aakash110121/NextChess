@@ -32,7 +32,6 @@ export default function Cookies() {
       <div className="cookies-wrap">
         <div className="wrapper">
           <header>
-            <i className="bx bx-cookie"></i>
             <h2>Cookies Consent</h2>
           </header>
 
