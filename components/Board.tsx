@@ -634,7 +634,7 @@ const Board: React.FC<GameProps> = ({
                     <div className="wave-bar"></div>
                     <div className="wave-bar"></div>
                   </div> :
-                    <div className="w-[220px] lg:w-[322px]"><p>{chessyComment}</p></div>}
+                    <div className="w-[220px] lg:w-[322px] hey-play-text"><p>{chessyComment}</p></div>}
                   {/* Added arrow */}
                   <div className="absolute w-2 h-3 bg-gray-200 rotate-45 -left-1.5 top-4"></div>
                 </div>

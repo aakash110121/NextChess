@@ -42,15 +42,15 @@ export default async function Page() {
 
                             </h1>
                        
-                         <p className="text-gray-600 c0atf czz36">Welcome to www.squsts.com!
+                         <p className=" czz36">Welcome to www.squsts.com!
 
                          </p>
-                         <p className="text-gray-600 c0atf czz36">These terms and conditions outline the rules and regulations for the use of Squsts&rsquo;s
+                         <p className=" czz36">These terms and conditions outline the rules and regulations for the use of Squsts&rsquo;s
 Website, located at <a href="http://squsts.com">http://squsts.com.</a>
 
                          </p>
 
-                         <p className="text-gray-600 c0atf czz36">By accessing this website we assume you accept these terms and conditions. Do
+                         <p className=" czz36">By accessing this website we assume you accept these terms and conditions. Do
 not continue to use www.squsts.com if you do not agree to take all of the terms and
 conditions stated on this page.
 
