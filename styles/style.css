@@ -4048,7 +4048,7 @@ a.signup-btn:hover{
     transition: .5s;
 }
 .login-wrap .input-box input:focus~label,
-.login-wrap .input-box input:valid~label{
+.login-wrap .input-box input:valid~label, .login-wrap .input-box input:invalid ~ label{
     top: -5px;
 }
 .login-wrap .input-box input{
