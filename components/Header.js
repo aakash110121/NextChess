@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 import Link from "next/link";
 import Image from 'next/image';
 import Logo from '@/public/images/logo.png';
@@ -14,11 +15,19 @@ export default function Header() {
 
   useEffect(() => {
     const lightSwitches = document.querySelectorAll('.light-switch');
+    
     if (lightSwitches.length > 0) {
+      // Check cookie value and apply the theme
+      const darkMode = Cookies.get('dark-mode') === 'true';
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+        lightSwitches.forEach(lightSwitch => lightSwitch.checked = true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        lightSwitches.forEach(lightSwitch => lightSwitch.checked = false);
+      }
+
       lightSwitches.forEach((lightSwitch, i) => {
-        if (localStorage.getItem('dark-mode') === 'true' || !('dark-mode' in localStorage)) {
-          // lightSwitch.checked = true;
-        }
         lightSwitch.addEventListener('change', () => {
           const { checked } = lightSwitch;
           lightSwitches.forEach((el, n) => {
@@ -26,17 +35,18 @@ export default function Header() {
               el.checked = checked;
             }
           });
-          if (lightSwitch.checked) {
+          if (checked) {
             document.documentElement.classList.add('dark');
-            // localStorage.setItem('dark-mode', true);
+            Cookies.set('dark-mode', 'true', { expires: 365 }); // Set cookie for 1 year
           } else {
             document.documentElement.classList.remove('dark');
-            // localStorage.setItem('dark-mode', false);
+            Cookies.set('dark-mode', 'false', { expires: 365 }); // Set cookie for 1 year
           }
         });
       });
     }
   }, []);
+  
   return (
     <>
       <header className="cgk3d cs8sl clzfl">

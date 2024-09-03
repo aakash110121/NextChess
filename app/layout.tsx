@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from 'next/headers';
 import { UserStatesProvider } from "./context/userStates";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,8 +13,10 @@ export const metadata: Metadata = {
   title: 'Squsts',
 }
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
+  const darkMode = cookies().get('dark-mode') === 'true';
+
   return (
-    <html lang="en">
+    <html lang="en" className={darkMode ? 'dark' : ''}>
       <body className="scroll-smooth antialiased [font-feature-settings:'ss01'] cwkwy cdmud cci6q c8d3u ca3pf cu0vm c6zr7">
         <div className="cr227 c27c3 c54sb cnc7y">
           <UserStatesProvider>
