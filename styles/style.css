@@ -4169,3 +4169,9 @@ a.signup-btn:hover{
         padding: 25px;
     }
 }
+
+@media(max-width:374px){
+    .cookies-wrap .wrapper {
+        max-width: 290px;
+      }
+}
