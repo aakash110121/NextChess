@@ -4017,6 +4017,7 @@ a.signup-btn:hover{
     margin: auto;
     padding: 40px;
     overflow: hidden;
+    background-color: #fff;
 }
 [type="text"]:focus, [type="email"]:focus,   [type="password"]:focus{
     --tw-ring-color:none;
