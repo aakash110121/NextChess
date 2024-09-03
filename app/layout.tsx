@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Squsts',
 }
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
-  const darkMode = cookies().get('dark-mode') === 'true';
+  const darkMode = cookies().get('dark-mode') == 'true';
 
   return (
     <html lang="en" className={darkMode ? 'dark' : ''}>
