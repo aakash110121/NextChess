@@ -4179,7 +4179,9 @@ a.signup-btn:hover{
     align-items: center;
     justify-content: center;
 }
-
+.dark .hey-play-text p {
+    color: #000;
+}
 @media(max-width:992px){
     .site-main-header .czak8 {
         display: inline-flex;
