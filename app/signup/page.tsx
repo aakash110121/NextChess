@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from "next";
 import Image from 'next/image';
-import HeroBgImgtour from '@/public/images/tournaments-banner.jpg';
+import HeroBgImgsignup from '@/public/images/signup-banner.jpg';
 
 export const metadata: Metadata = {
 title: 'Sign Up | Squsts',
@@ -15,7 +15,7 @@ return (
    <div className="cbng2 cgk3d c2ysc c4shy cgjq2 codcr">
       <Image
          className="c9sso c3j32 cgk3d c2ysc c1zcx cs8sl"
-         src={HeroBgImgtour}
+         src={HeroBgImgsignup}
          width={1440}
          height={577}
          alt="How to play"
