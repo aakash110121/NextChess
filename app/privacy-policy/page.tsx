@@ -13,7 +13,7 @@ export default async function Page() {
     return (
     <>
     {/* Hero */}
-    <section className="czjaw">
+    <section className="czjaw ">
        {/* Background image */}
        <div className="cbng2 cgk3d c2ysc c4shy cgjq2 codcr">
           <Image
@@ -35,12 +35,12 @@ export default async function Page() {
                 <article>
                    <header>
                       {/* Title and excerpt */}
-                      <div className="c7z56 c5ymx">
-                         <a href="blog-post.html">
+                      <div className="c7z56 c5ymx privacy-banner">
+                     
                             <h1 className="cps50 cyb9k c41dw">
                             Privacy Policy
                             </h1>
-                         </a>
+                     
                          <p className="text-gray-600 c0atf czz36">This Privacy Policy describes Our policies and procedures on the collection, use and
 disclosure of Your information when You use the Service and tells You about Your
 privacy rights and how the law protects You.
@@ -76,9 +76,11 @@ regardless of whether they appear in singular or in plural.
                     </div>
 
                     <div className="privacy-wrap">
-    <h3>
+    <p>
+      <strong>
        Definitions
-    </h3>
+       </strong>
+    </p>
     <p>
        For the purposes of this Privacy Policy:
     </p>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import Logo from '@/public/images/logo.png';
 import LogoDark from '@/public/images/dark-logo.png';
+import userIcon from '@/public/images/profile-user.png';
 
 export default function Header() {
   const [expanded, setExpanded] = useState(false);
@@ -39,7 +40,7 @@ export default function Header() {
   }, []);
   return (
     <>
-      <header className="cgk3d cs8sl clzfl">
+      <header className="cgk3d cs8sl clzfl site-main-header">
         <div className="czd2q c92f3 cmhb9 c1plj">
           <div className="ctiy6 cxdxt cnc7y cevvc">
             {/* Site branding */}
@@ -88,6 +89,14 @@ export default function Header() {
               </ul>
 
               {/* Desktop lights switch */}
+
+              <div className="user-login">
+                <Link className="text-white bg-teal-500 cvy08 c9xc1 cbev1" href="/login">
+
+              
+                Login
+                  </Link>
+                </div>
               <div className="form-switch cw3my c54sb cahr4 cnc7y">
                 <input
                   type="checkbox"
@@ -111,6 +120,7 @@ export default function Header() {
 
               {/* Desktop CTA on the right */}
               <ul className="cxdxt c138q cxu0t cnc7y">
+               
                 <li>
                   <Link className="text-white bg-teal-500 cvy08 c9xc1 cbev1" href="/contact">
                     Contact Us
@@ -120,7 +130,15 @@ export default function Header() {
             </nav>
 
             {/* Mobile menu */}
+            
             <div className="czak8 ce20z">
+            <div className="user-login">
+                <Link className="text-white bg-teal-500 cvy08 c9xc1 cbev1" href="/login">
+
+              
+                Login
+                  </Link>
+                </div>
               {/* Mobile lights switch */}
               <div className="form-switch cw3my c54sb ccond cnc7y">
                 <input
@@ -185,7 +203,13 @@ export default function Header() {
                         </Link>
                       </li>
                       <li>
-                        <Link className="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1" href="/contact">
+                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/chess-tournaments">
+                        Chess Tournaments
+                        </Link>
+                      </li>
+                    
+                      <li>
+                        <Link className="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1 mobile-nav-btn " href="/contact">
                           Contact Us
                         </Link>
                       </li>

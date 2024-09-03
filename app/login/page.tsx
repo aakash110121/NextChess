@@ -31,7 +31,7 @@ return (
 </section>
 <div className="login-wrap">
     <div className="wrapper register">
-        <a href="index.html"><span className="icon-close">X</span></a>
+        {/* <a href="index.html"><span className="icon-close">X</span></a> */}
     
     <h2>Login</h2>
     
