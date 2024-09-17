@@ -198,28 +198,28 @@ export default function Header() {
                     {/* Links */}
                     <ul>
                       <li>
-                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/play-now">
+                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/play-now" onClick={()=>{setExpanded(false)}}>
                           Play now
                         </Link>
                       </li>
                       <li>
-                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/about">
+                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/about" onClick={()=>{setExpanded(false)}}>
                           About
                         </Link>
                       </li>
                       <li>
-                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/how-to-play">
+                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/how-to-play" onClick={()=>{setExpanded(false)}}>
                           How to play
                         </Link>
                       </li>
                       <li>
-                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/chess-tournaments">
+                        <Link className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="/chess-tournaments" onClick={()=>{setExpanded(false)}}>
                         Chess Tournaments
                         </Link>
                       </li>
                     
                       <li>
-                        <Link className="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1 mobile-nav-btn " href="/contact">
+                        <Link className="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1 mobile-nav-btn " href="/contact" onClick={()=>{setExpanded(false)}}>
                           Contact Us
                         </Link>
                       </li>
