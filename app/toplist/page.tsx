@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Image from 'next/image';
 import HeroBgImgTerm from '@/public/images/term-banner.jpg';
 
-import BetplayLogo from '@/public/images/bet-play.svg';
+import BetplayLogo from '@/public/images/betplays-logo.jpg';
 import IviBet from '@/public/images/Ivibet.webp';
-import TonyBet from '@/public/images/tony-bet.svg';
+import TonyBet from '@/public/images/tonybet.png';
 import VegaSino from '@/public/images/vegasino-logo.webp';
 import LegiAno from '@/public/images/Legiano-logo.webp';
 import LibraBet from '@/public/images/librabet-logo.png';

@@ -4257,8 +4257,11 @@ section.mobile-view::after {
     align-items: center;
     height: 110px;
     padding: 10px;
-    background: #8c8c8cf2;
+    /* background: #8c8c8cf2; */
     margin-bottom: 15px;
+}
+.text_auality p {
+    color: #777;
 }
 .mobile-view-design .warapper .main_box .beting_logo img {
     width: 100%;
