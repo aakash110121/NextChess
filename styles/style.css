@@ -4185,20 +4185,11 @@ a.signup-btn:hover{
 
 
 
-
-
-
-
-
-
-
-
-
 .mobile-view-design {
-    /* background: #f4f4f4; */
+    background: #fff;
     padding-bottom: 28px;
     display: none;
-    margin-top:100px;
+    padding: 150px 15px 15px 15px;
 }
 
 .mobile-view-design p span {
