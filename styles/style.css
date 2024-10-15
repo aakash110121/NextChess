@@ -4349,8 +4349,10 @@ section.mobile-view::after {
     padding: 10px 20px;
 }
 .bg-back h2.text-center.pt-4 {
+    font-size: 26px;
     padding: 20px;
 }
+
 }
 
 
