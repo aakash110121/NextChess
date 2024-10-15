@@ -4330,6 +4330,7 @@ section.mobile-view::after {
 .bg-back h2.text-center.pt-4 {
     font-size: 22px;
     font-weight: 600;
+    color: #111;
 }
 
 @media(max-width:575px){
