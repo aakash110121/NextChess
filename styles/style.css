@@ -4184,21 +4184,11 @@ a.signup-btn:hover{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .mobile-view-design {
-    /* background: #f4f4f4; */
+    background: #fff;
     padding-bottom: 28px;
     display: none;
-    margin-top:100px;
+    padding: 150px 15px 15px 15px;
 }
 
 .mobile-view-design p span {
@@ -4257,8 +4247,11 @@ section.mobile-view::after {
     align-items: center;
     height: 110px;
     padding: 10px;
-    background: #8c8c8cf2;
+    /* background: #8c8c8cf2; */
     margin-bottom: 15px;
+}
+.text_auality p {
+    color: #777;
 }
 .mobile-view-design .warapper .main_box .beting_logo img {
     width: 100%;
@@ -4337,6 +4330,7 @@ section.mobile-view::after {
 .bg-back h2.text-center.pt-4 {
     font-size: 22px;
     font-weight: 600;
+    color: #111;
 }
 
 @media(max-width:575px){
@@ -4356,8 +4350,10 @@ section.mobile-view::after {
     padding: 10px 20px;
 }
 .bg-back h2.text-center.pt-4 {
+    font-size: 26px;
     padding: 20px;
 }
+
 }
 
 

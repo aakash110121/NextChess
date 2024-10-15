@@ -12,9 +12,9 @@ import RelatedPost3 from '@/public/images/related-post-03.jpg';
 import RelatedPost4 from '@/public/images/related-post-04.jpg';
 import RelatedPost5 from '@/public/images/related-post-05.jpg';
 
-import BetplayLogo from '@/public/images/bet-play.svg';
+import BetplayLogo from '@/public/images/betplays-logo.jpg';
 import IviBet from '@/public/images/Ivibet.webp';
-import TonyBet from '@/public/images/tony-bet.svg';
+import TonyBet from '@/public/images/tonybet.png';
 import VegaSino from '@/public/images/vegasino-logo.webp';
 import LegiAno from '@/public/images/Legiano-logo.webp';
 import LibraBet from '@/public/images/librabet-logo.png';
