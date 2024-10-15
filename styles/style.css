@@ -4198,6 +4198,7 @@ a.signup-btn:hover{
     /* background: #f4f4f4; */
     padding-bottom: 28px;
     display: none;
+    margin-top:100px;
 }
 
 .mobile-view-design p span {
@@ -4245,6 +4246,9 @@ section.mobile-view::after {
     width: 50%;
     /* background: #b70000; */
     padding: 10px 25px;
+}
+.text_auality {
+    padding: 0 20px;
 }
 .beting_logo a {
     text-align: center;
@@ -4350,6 +4354,9 @@ section.mobile-view::after {
 .mobile-view-design .awesome a {
     font-size: 13px;
     padding: 10px 20px;
+}
+.bg-back h2.text-center.pt-4 {
+    padding: 20px;
 }
 }
 
