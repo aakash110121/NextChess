@@ -3939,6 +3939,7 @@ a.signup-btn:hover{
     padding: 15px 25px 22px;
     transition: right 0.3s ease;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 99;
   }
   .cookies-wrap .wrapper.show {
     right: 20px;
