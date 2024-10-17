@@ -4334,12 +4334,13 @@ section.mobile-view::after {
     color: #111;
 }
 
+
 @media(max-width:575px){
     .mobile-view-design.entertainment {
-    display: block;
+    display: none;
 }
 .desktop-view{
-    display: none;
+    display: block;
 }
 }
 @media(max-width:375px){
