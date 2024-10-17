@@ -4334,6 +4334,7 @@ section.mobile-view::after {
     color: #111;
 }
 
+
 @media(max-width:575px){
     .mobile-view-design.entertainment {
     display: none;
