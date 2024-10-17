@@ -4336,10 +4336,10 @@ section.mobile-view::after {
 
 @media(max-width:575px){
     .mobile-view-design.entertainment {
-    display: block;
+    display: none;
 }
 .desktop-view{
-    display: none;
+    display: block;
 }
 }
 @media(max-width:375px){
